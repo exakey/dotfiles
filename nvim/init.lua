@@ -68,6 +68,23 @@ vim.api.nvim_create_autocmd("InsertEnter", {
         callback = function() safeRequire("core.spellfixes") end,
 })
 
+local capabilities = {
+        textDocument = {
+                foldingRange = {
+                        dynamicRegistration = false,
+                        lineFoldingOnly     = true,
+                }
+        }
+}
+
+
+capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+
+vim.lsp.config("*", {
+        capabilities = capabilities,
+        root_markers = { ".git" }
+})
+
 vim.lsp.enable({
         "luals",
         "clangd",

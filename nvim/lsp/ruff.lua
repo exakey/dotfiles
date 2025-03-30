@@ -1,4 +1,4 @@
-vim.lsp.config["ruff"] = {
+return {
         cmd          = {
                 "ruff",
                 "server",
@@ -6,6 +6,6 @@ vim.lsp.config["ruff"] = {
                 "analyze",
                 "linter",
         },
-        root_markers = { ".git", ".venv" },
-        filetypes    = { "py" },
+        root_markers = { ".venv" },
+        filetypes    = { "python" },
 }

@@ -1,6 +1,5 @@
-vim.lsp.config["gopls"] = {
+return {
         cmd          = { "gopls" },
-        root_markers = { ".git" },
         filetypes    = { "go", "gomod", "gowork", "gotmpl" },
         settings     = {
                 gopls   = {

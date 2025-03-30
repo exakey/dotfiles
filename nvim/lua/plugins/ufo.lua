@@ -57,25 +57,15 @@ return {
         opts         = {
                 -- when opening the buffer, close these fold kinds
                 close_fold_kinds_for_ft = {
-                        default = { "imports", "comment" },
-                        { -- SHIFT LEFT
-                                "h", "<cmd>WinShift left<CR>"
-                        },
-                        { -- SHIFT DOWN
-                                "j", "<cmd>WinShift down<CR>"
-                        },
-                        { -- SHIFT UP
-                                "k", "<cmd>WinShift up<CR>"
-                        },
-                        { -- SHIFT RIGHT
-                                "l", "<cmd>WinShift right<CR>"
-                        },
+                        default  = { "imports", "comment" },
                         json     = { "array" },
                         markdown = {}, -- avoid everything becoming folded
                         toml     = {},
                         lua      = { "region" },
                         c        = { "region", "comment" },
-                        cpp      = { "region", "comment" }
+                        cpp      = { "region", "comment" },
+                        zsh      = { "if_statement", "for_statement", "function_definition" },
+                        sh       = {},
                         -- use `:UfoInspect` to get see available fold kinds
                 },
 

@@ -1,12 +1,11 @@
-vim.lsp.config["bash-language-server"] = {
-        cmd          = { "bash-language-server", "start" },
-        root_markers = { ".git", ".editorconfig" },
-        settings     = {
+return {
+        cmd       = { "bash-language-server", "start" },
+        settings  = {
                 bashIde = {
                         includeAllWorkspaceSymbols = true,
                         globPattern                = "**/*@(.sh|.bash)",
                         shellcheckArguments        = "--shell=bash",
                 },
         },
-        filetypes    = { "bash", "sh", "zsh" },
+        filetypes = { "bash", "sh", "zsh" },
 }

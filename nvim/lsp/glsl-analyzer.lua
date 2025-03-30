@@ -1,5 +1,4 @@
-vim.lsp.config["glsl_analyzer"] = {
+return {
         cmd          = { "glsl_analyzer" },
-        root_markers = { ".git" },
-        filetypes    = { "glsl", "frag" },
+        filetypes    = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
 }

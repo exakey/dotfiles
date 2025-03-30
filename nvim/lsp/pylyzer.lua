@@ -1,5 +1,6 @@
-vim.lsp.config["pylyzer"] = {
+return {
         cmd          = { "pylyzer", "start" },
-        root_markers = { ".git" },
-        filetypes    = { "py" },
+        root_markers = { ".venv" },
+        filetypes    = { "python" },
+        settings     = {},
 }
