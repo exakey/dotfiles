@@ -147,13 +147,9 @@ alias          lg='lazygit'
 # Select Ghostty shader
 shader() {
         shader="$(find "$HOME/.config/ghostty/shaders/" -type f | fzf)"
-
         if [[ -n "$shader" ]]; then
                 escaped_shader=$(printf '%s\n' "$shader" | sed 's/[&/\]/\\&/g')
-
                 sed -i "s|\(custom-shader = \).*|\1$escaped_shader|" "$HOME/.config/ghostty/config"
-
-        # ghostty reload_config
         fi
 }
 
@@ -181,9 +177,7 @@ y() {
 # Select neovim config
 vv() {
         local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
-
         [[ -z $config ]] && echo "No config selected" && return
-
         NVIM_APPNAME=$(basename "$config") nvim "$@"
 }
 
@@ -219,7 +213,5 @@ eval "$(zoxide init --cmd cd zsh)"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/bin"
-
-alias dot='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
