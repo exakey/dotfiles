@@ -88,7 +88,7 @@ return {
                 },
 
                 fuzzy      = {
-                        implementation = "prefer_rust_with_warning",
+                        implementation = "lua",
                         use_frecency   = true,
                         use_proximity  = true,
                         sorts          = { "score", "sort_text" }

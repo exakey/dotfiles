@@ -1,6 +1,6 @@
 return {
         "rachartier/tiny-code-action.nvim",
-        event        = "LspAttach",
+        event        = "VeryLazy",
 
         dependencies = {
                 { "nvim-lua/plenary.nvim" },
@@ -15,7 +15,6 @@ return {
                                 delta = {
                                         header_lines_to_remove = 4,
                                         line_numbers           = true,
-                                        -- args                   = { "--side-by-side" },
                                 },
                         },
 
@@ -23,8 +22,6 @@ return {
                                 layout_strategy = "vertical",
                                 layout_config   = {
                                         vertical = {
-                                                -- width          = 0.5,
-                                                -- height         = 0.7,
                                                 preview_cutoff = 1,
                                                 preview_height = function(_, _, max_lines)
                                                         local h = math.floor(max_lines * 0.6)

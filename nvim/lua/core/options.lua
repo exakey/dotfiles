@@ -137,8 +137,3 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
         pattern  = "*",
         callback = function() end,
 })
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        { focusable = false }
-)

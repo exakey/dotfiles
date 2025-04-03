@@ -34,6 +34,11 @@ map(n, "<leader>pd", function() vim.ui.open(pluginDir) end, { desc = "󰝰 Plugi
 --------------------------------------------------------------------------------
 -- NAVIGATION
 
+map(n, "_", "0")
+
+map(nx, "{", "{zzzz", { silent = true })
+map(nx, "}", "}zzzz", { silent = true })
+
 -- j/k should on wrapped lines
 map(nx, "j", "gj")
 map(nx, "k", "gk")
@@ -77,7 +82,7 @@ map(n, "F", function() require("functions.nano-plugins").fF("F") end, { desc = "
 
 -- Folds
 map(n, "zh", "zczz", { desc = "Close current fold", silent = true })
-map(n, "zl", "zozz", { desc = "Open current fold", silent = true })
+map(n, "zl", "zOzz", { desc = "Open current fold", silent = true })
 map(n, "zj", "zjzz", { desc = "Open current fold", silent = true })
 
 -- Move to the end of previous word
@@ -96,11 +101,13 @@ map(n, "<leader>uu", ":earlier ", { desc = "󰜊 Undo to earlier", silent = true
 map(n, "<leader>ur", function() vim.cmd.later(vim.o.undolevels) end, { desc = "󰛒 Redo all", silent = true })
 
 -- Duplicate
-map(n, "ww", function() require("functions.nano-plugins").smartDuplicate() end, { desc = "󰲢 Duplicate line", silent = true })
+map(n, "<c-w>", function() require("functions.nano-plugins").smartDuplicate() end,
+        { desc = "󰲢 Duplicate line", silent = true })
 
 -- Toggles
 map(n, "~", "v~", { desc = "󰬴 Toggle char case (w/o moving)", silent = true })
-map(n, "<", function() require("functions.nano-plugins").toggleWordCasing() end, { desc = "󰬴 Toggle lower/Title case", silent = true })
+map(n, "<", function() require("functions.nano-plugins").toggleWordCasing() end,
+        { desc = "󰬴 Toggle lower/Title case", silent = true })
 -- map(n, ">", "gUiw", { desc = "󰬴 Toggle UPPER case" })
 
 map(n, ">", function()
@@ -124,12 +131,12 @@ end
 map(n, "<CR>", "<]-Space>", { desc = " blank below", silent = true })
 map(n, "<S-CR>", "<[-Space>", { desc = " blank above", silent = true })
 
-map(n, "<Tab>", ">>", { desc = "󰉶 indent", silent = true })
-map(n, "<S-Tab>", "<<", { desc = "󰉵 outdent", silent = true })
-map(x, "<Tab>", ">gv", { desc = "󰉶 indent", silent = true })
-map(x, "<S-Tab>", "<gv", { desc = "󰉵 outdent", silent = true })
-map(i, "<Tab>", "<C-t>", { desc = "󰉶 indent", silent = true })
-map(i, "<S-Tab>", "<C-d>", { desc = "󰉵 outdent", silent = true })
+-- map(n, "<Tab>", ">>", { desc = "󰉶 indent", silent = true })
+-- map(n, "<S-Tab>", "<<", { desc = "󰉵 outdent", silent = true })
+-- map(x, "<Tab>", ">gv", { desc = "󰉶 indent", silent = true })
+-- map(x, "<S-Tab>", "<gv", { desc = "󰉵 outdent", silent = true })
+-- map(i, "<Tab>", "<C-t>", { desc = "󰉶 indent", silent = true })
+-- map(i, "<S-Tab>", "<C-d>", { desc = "󰉵 outdent", silent = true })
 
 -- Merging
 map(n, "m", "J", { desc = "󰽜 Merge line up", silent = true })
@@ -149,8 +156,8 @@ map(n, "<C-a>", "ggVG", { desc = "Select all", silent = true })
 
 -- Save file
 vim.keymap.del(i, "<C-s>")
-map(ni, "<C-s>", "<cmd>w<CR>", { desc = "Save File", silent = true })
-map(ni, "<C-S-s>", "<cmd>wa<CR>", { desc = "Save File", silent = true })
+map(ni, "<C-s>", "<cmd>w<CR><esc>", { desc = "Save File", silent = true })
+map(ni, "<C-S-s>", "<cmd>wa<CR><esc>", { desc = "Save File", silent = true })
 
 --------------------------------------------------------------------------------
 -- SURROUND
@@ -204,21 +211,34 @@ map(n, "qO", function() require("functions.comment").addComment("above") end, { 
 --------------------------------------------------------------------------------
 -- LSP
 
-map(niv, ",c", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
-map(nv, "K", "<cmd>lua vim.lsp.buf.signature_help()<CR>zz", { desc = "󰏪 LSP Signature", silent = true })
+map(nx, "K", vim.lsp.buf.signature_help({
+                max_width   = 75,
+                wrap        = false,
+                title       = " LSP Hover ",
+                border      = { "", "", "", "", "", "", "", "", },
+                anchor_bias = "below",
+                relative    = "cursor",
+        }), { desc = "󰏪 LSP Signature", silent = true })
 -- map(nx, "<leader>f", function() require("functions.nano-plugins").formatWithFallback() end, { desc = "󱉯 Format", silent = true })
-map(nx, "<leader><leader>c", function()
-        require("tiny-code-action").code_action()
-end, { desc = "Code Action", silent = true })
+map(niv, ",c", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
+map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action() end,
+        { desc = "Code Action", silent = true })
 
 -- GOTO
 map(n, ",D", "gD", { desc = "Goto Declaration", silent = true })
 map(n, ",d", "gd", { desc = "Goto Definition", silent = true })
-map(n, ",i", vim.lsp.buf.implementation, { desc = "Goto Implementation", silent = true })
 map(n, ",f", "gf", { desc = "Goto File", silent = true })
+map(n, ",i", vim.lsp.buf.implementation, { desc = "Goto Implementation", silent = true })
 
 do
-        map(nx, "<leader>h", vim.lsp.buf.hover(), { desc = "󰋽 LSP hover", silent = true })
+        map(nx, "<leader>h", vim.lsp.buf.hover({
+                max_width   = 75,
+                wrap        = false,
+                title       = " LSP Hover ",
+                border      = { "", "", "", "", "", "", "", "", },
+                anchor_bias = "below",
+                relative    = "cursor",
+        }), { desc = "󰋽 LSP hover", silent = true })
         local function scrollLspWin(lines)
                 local winid = vim.b.lsp_floating_preview --> stores id of last `vim.lsp`-generated win
                 if not winid or not vim.api.nvim_win_is_valid(winid) then return end
@@ -259,7 +279,8 @@ map(n, "<leader>ib", function() require("functions.inspect-and-eval").bufferInfo
         { desc = "󰽙 Buffer info", silent = true })
 map(nx, "<leader>ie", function() require("functions.inspect-and-eval").evalNvimLua() end,
         { desc = " Eval", silent = true })
-map(n, "<leader><leader>x", function() require("functions.inspect-and-eval").runFile() end, { desc = "󰜎 Run file", silent = true })
+map(n, "<leader><leader>x", function() require("functions.inspect-and-eval").runFile() end,
+        { desc = "󰜎 Run file", silent = true })
 
 --------------------------------------------------------------------------------
 -- WINDOWS
@@ -289,7 +310,8 @@ do
                 { desc = "󰃽 Start/stop recording", silent = true }
         )
         -- stylua: ignore
-        map(n, "c0", function() require("functions.nano-plugins").editMacro(reg) end, { desc = "󰃽 Edit recording", silent = true })
+        map(n, "c0", function() require("functions.nano-plugins").editMacro(reg) end,
+                { desc = "󰃽 Edit recording", silent = true })
         map(n, "9", "@" .. reg, { desc = "󰃽 Play recording", silent = true })
 end
 

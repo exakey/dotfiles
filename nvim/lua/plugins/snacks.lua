@@ -72,8 +72,8 @@ return {
                                         format  = "buffer",
                                         hidden  = false,
                                         win     = {
-                                                input = { keys = { ["Backspace"] = "bufdelete" } },
-                                                list  = { keys = { ["Backspace"] = "bufdelete" } },
+                                                -- input = { keys = { ["Backspace"] = "bufdelete" } },
+                                                -- list  = { keys = { ["Backspace"] = "bufdelete" } },
                                         },
                                 })
                         end,
