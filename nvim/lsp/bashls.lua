@@ -1,5 +1,6 @@
 return {
         cmd       = { "bash-language-server", "start" },
+        filetypes = { "bash", "sh", "zsh" },
         settings  = {
                 bashIde = {
                         includeAllWorkspaceSymbols = true,
@@ -7,5 +8,4 @@ return {
                         shellcheckArguments        = "--shell=bash",
                 },
         },
-        filetypes = { "bash", "sh", "zsh" },
 }
