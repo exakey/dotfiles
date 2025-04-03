@@ -116,8 +116,8 @@ for _, key in pairs(trailChars) do
 end
 
 -- Whitespace & indentation
-map(n, "<CR>", "<]-Space>", { desc = " blank below", silent = true })
-map(n, "<S-CR>", "<[-Space>", { desc = " blank above", silent = true })
+map(n, "<CR>", "<Space>]", { desc = " blank below", silent = true })
+map(n, "<S-CR>", "<Space>[", { desc = " blank above", silent = true })
 
 -- map(n, "<Tab>", ">>", { desc = "󰉶 indent", silent = true })
 -- map(n, "<S-Tab>", "<<", { desc = "󰉵 outdent", silent = true })
