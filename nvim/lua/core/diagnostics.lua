@@ -1,8 +1,8 @@
 -- HANDLERS
 
 -- `vim.lsp.buf.rename`: add notification & writeall to renaming
-local originalRenameHandler                    = vim.lsp.handlers["textDocument/rename"]
-vim.lsp.handlers["textDocument/rename"]        = function(err, result, ctx, config)
+local originalRenameHandler             = vim.lsp.handlers["textDocument/rename"]
+vim.lsp.handlers["textDocument/rename"] = function(err, result, ctx, config)
         originalRenameHandler(err, result, ctx, config)
         if err or not result then return end
 
@@ -40,7 +40,7 @@ end
 -- (uses vim.notify opts tailored to `snacks.nvim`, but should in general work
 -- for other notifiers as well)
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
-local progress                                 = vim.defaulttable()
+local progress                          = vim.defaulttable()
 vim.api.nvim_create_autocmd("LspProgress", {
         ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
         callback = function(ev)
