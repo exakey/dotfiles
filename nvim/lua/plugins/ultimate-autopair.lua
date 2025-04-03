@@ -33,7 +33,7 @@ return {
                         -- INFO custom keys need to be "appended" to the opts as a list
                         { "*",    "*",    ft = { "markdown" } },       -- italics
                         { "__",   "__",   ft = { "markdown" } },       -- bold
-                        { [[\"]], [[\"]], ft = { "zsh", "json", "applescript" } }, -- escaped quote
+                        { [[\"]], [[\"]], ft = { "zsh", "json" } }, -- escaped quote
 
                         {                                              -- commit scope (= only first word) for commit messages
                                 "(",

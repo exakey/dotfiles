@@ -10,7 +10,6 @@ local autoCdConfig = {
         },
         parentOfRoot = {
                 ".config",
-                "com~apple~CloudDocs",
                 vim.fs.basename(vim.env.HOME),
                 "Cellar",
         },

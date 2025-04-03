@@ -13,10 +13,6 @@
     "body": "scutil --get ComputerName | grep -q \"$0\"",
     "prefix": "device name"
   },
-  "check if dark mode (macOS)": {
-    "body": "defaults read -g AppleInterfaceStyle &>/dev/null; && echo 'isDark'",
-    "prefix": "check if dark mode (macOS)"
-  },
   "check if in git repo": {
     "body": "if ! git rev-parse --is-inside-work-tree &>/dev/null ; then print \"\\e[0;33mfile is not ins a git repository.\\e[0m\" && return 1 ; fi",
     "prefix": "check if in git repo"
