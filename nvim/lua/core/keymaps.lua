@@ -115,16 +115,9 @@ for _, key in pairs(trailChars) do
         map(n, "<leader>" .. key, ("mzA%s%s<Esc>`z"):format(pad, key), { silent = true })
 end
 
--- Whitespace & indentation
-map(n, "<CR>", "<Space>]", { desc = " blank below", silent = true })
-map(n, "<S-CR>", "<Space>[", { desc = " blank above", silent = true })
-
--- map(n, "<Tab>", ">>", { desc = "󰉶 indent", silent = true })
--- map(n, "<S-Tab>", "<<", { desc = "󰉵 outdent", silent = true })
--- map(x, "<Tab>", ">gv", { desc = "󰉶 indent", silent = true })
--- map(x, "<S-Tab>", "<gv", { desc = "󰉵 outdent", silent = true })
--- map(i, "<Tab>", "<C-t>", { desc = "󰉶 indent", silent = true })
--- map(i, "<S-Tab>", "<C-d>", { desc = "󰉵 outdent", silent = true })
+-- Whitespace
+map(n, "<CR>", "o<Esc>k", { desc = " blank below", silent = true })
+map(n, "<S-CR>", "O<Esc>j", { desc = " blank above", silent = true })
 
 -- Merging
 map(n, "m", "J", { desc = "󰽜 Merge line up", silent = true })
