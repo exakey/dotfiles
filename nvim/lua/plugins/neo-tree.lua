@@ -3,7 +3,7 @@ return {
         lazy = true,
         branch       = "v3.x",
         keys         = {
-                { ",e", "<cmd>Neotree toggle<cr>", desc = "Tree", mode = { "n" } },
+                { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Tree", mode = { "n" } },
         },
         dependencies = {
                 "nvim-lua/plenary.nvim",

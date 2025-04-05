@@ -60,6 +60,11 @@ return {
                                         {
                                                 'diff',
                                                 colored    = true,
+                                                diff_color = {
+                                                        added    = "GitSignsAdd",
+                                                        modified = "GitSignsChange",
+                                                        removed  = "GitSignsDelete"
+                                                },
                                                 symbols    = { added = '+', modified = '~', removed = '-' },
                                                 source     = nil,
                                         }
@@ -84,6 +89,12 @@ return {
                                                 "diagnostics",
                                                 sources           = { "nvim_diagnostic", "coc" },
                                                 sections          = { "error", "warn", "info" },
+                                                diagnostics_color = {
+                                                        error = "DiagnosticError",
+                                                        warn  = "DiagnosticWarn",
+                                                        info  = "DiagnosticInfo",
+                                                        hint  = "DiagnosticHint",
+                                                },
                                                 symbols           = { error = "", warn = " ", info = " ", hint = " " },
                                                 colored           = true,
                                                 update_in_insert  = true,

@@ -1,5 +1,5 @@
 local customCol = function(colors)
-local blinkBg   = "NONE"
+        local blinkBg = "NONE"
         return {
                 -------------------------------------------------------------------------------------------------------------------
                 -- CMP
@@ -148,6 +148,12 @@ local blinkBg   = "NONE"
                 HoverBorder                      = { fg = colors.mantle, bg = colors.mantle },
                 RipSubBackdrop                   = { fg = colors.mantle, bg = colors.mantle },
                 Folded                           = { fg = "NONE", bg = colors.mantle, bold = true },
+                DiagnosticError                  = { bg = colors.crust },
+                DiagnosticWarn                   = { bg = colors.crust },
+                DiagnosticInfo                   = { bg = colors.crust },
+                GitSignsAdd                      = { bg = colors.crust },
+                GitSignsChange                   = { bg = colors.crust },
+                GitSignsDelete                   = { bg = colors.crust },
 
                 -------------------------------------------------------------------------------------------------------------
                 -- NEOTREE
@@ -346,25 +352,25 @@ local blinkBg   = "NONE"
                 DropBarIconKindIfstatement       = { fg = colors.lavender, bg = colors.crust },
                 DropBarIconKindList              = { fg = colors.rosewater, bg = colors.crust },
                 DropBarIconKindMacro             = { fg = colors.mauve, bg = colors.crust },
-                DropBarIconKindMarkdownH1        = { fg = colors.red,bg = colors.crust },
-                DropBarIconKindMarkdownH2        = { fg = colors.peach,bg = colors.crust },
-                DropBarIconKindMarkdownH3        = { fg = colors.yellow,bg = colors.crust },
-                DropBarIconKindMarkdownH4        = { fg = colors.green,bg = colors.crust },
-                DropBarIconKindMarkdownH5        = { fg = colors.sapphire,bg = colors.crust },
-                DropBarIconKindMarkdownH6        = { fg = colors.lavender,bg = colors.crust },
-                DropBarIconKindPair              = { fg = colors.rosewater,bg = colors.crust },
-                DropBarIconKindReference         = { fg = colors.yellow,bg = colors.crust },
-                DropBarIconKindRepeat            = { fg = colors.rosewater,bg = colors.crust },
-                DropBarIconKindRuleset           = { fg = colors.rosewater,bg = colors.crust },
-                DropBarIconKindScope             = { fg = colors.rosewater,bg = colors.crust },
-                DropBarIconKindSpecifier         = { fg = colors.rosewater,bg = colors.crust },
-                DropBarIconKindStatement         = { fg = colors.lavender,bg = colors.crust },
-                DropBarIconKindSwitchStatement   = { fg = colors.lavender,bg = colors.crust },
-                DropBarIconKindTerminal          = { fg = colors.rosewater,bg = colors.crust },
-                DropBarIconKindType              = { fg = colors.teal,bg = colors.crust },
-                DropBarIconKindUnit              = { fg = colors.yellow,bg = colors.crust },
-                DropBarIconKindValue             = { fg = colors.text,bg = colors.crust },
-                DropBarIconKindWhileStatement    = { fg = colors.lavender,bg = colors.crust },
+                DropBarIconKindMarkdownH1        = { fg = colors.red, bg = colors.crust },
+                DropBarIconKindMarkdownH2        = { fg = colors.peach, bg = colors.crust },
+                DropBarIconKindMarkdownH3        = { fg = colors.yellow, bg = colors.crust },
+                DropBarIconKindMarkdownH4        = { fg = colors.green, bg = colors.crust },
+                DropBarIconKindMarkdownH5        = { fg = colors.sapphire, bg = colors.crust },
+                DropBarIconKindMarkdownH6        = { fg = colors.lavender, bg = colors.crust },
+                DropBarIconKindPair              = { fg = colors.rosewater, bg = colors.crust },
+                DropBarIconKindReference         = { fg = colors.yellow, bg = colors.crust },
+                DropBarIconKindRepeat            = { fg = colors.rosewater, bg = colors.crust },
+                DropBarIconKindRuleset           = { fg = colors.rosewater, bg = colors.crust },
+                DropBarIconKindScope             = { fg = colors.rosewater, bg = colors.crust },
+                DropBarIconKindSpecifier         = { fg = colors.rosewater, bg = colors.crust },
+                DropBarIconKindStatement         = { fg = colors.lavender, bg = colors.crust },
+                DropBarIconKindSwitchStatement   = { fg = colors.lavender, bg = colors.crust },
+                DropBarIconKindTerminal          = { fg = colors.rosewater, bg = colors.crust },
+                DropBarIconKindType              = { fg = colors.teal, bg = colors.crust },
+                DropBarIconKindUnit              = { fg = colors.yellow, bg = colors.crust },
+                DropBarIconKindValue             = { fg = colors.text, bg = colors.crust },
+                DropBarIconKindWhileStatement    = { fg = colors.lavender, bg = colors.crust },
         }
 end
 
@@ -386,10 +392,12 @@ return {
                         no_bold                = false,
                         no_underline           = false,
 
-                        color_overrides        = { mocha = {
-                                -- crust  = "#000000",
-                                -- mantle = "#000000",
-                        } },
+                        color_overrides        = {
+                                mocha = {
+                                        -- crust  = "#000000",
+                                        -- mantle = "#000000",
+                                }
+                        },
                         custom_highlights      = customCol,
 
                         default_integrations   = true,
