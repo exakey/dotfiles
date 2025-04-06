@@ -1,5 +1,6 @@
 return {
         "roobert/action-hints.nvim",
+        enabled = false,
         event = "VeryLazy",
         opts  = {
                 template = {
