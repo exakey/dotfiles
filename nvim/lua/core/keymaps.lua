@@ -209,7 +209,7 @@ map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action(
 map(n, ",D", "gD", { desc = "Goto Declaration", silent = true })
 map(n, ",d", "gd", { desc = "Goto Definition", silent = true })
 map(n, ",f", "gf", { desc = "Goto File", silent = true })
-map(n, ",i", vim.lsp.buf.implementation, { desc = "Goto Implementation", silent = true })
+map(n, ",i", "gri", { desc = "Goto Implementation", silent = true })
 
 do
         map(nx, "<leader>h", vim.lsp.buf.hover({
