@@ -60,6 +60,7 @@ safeRequire("core.keymaps")
 safeRequire("core.yank-paste")
 safeRequire("core.highlights")
 safeRequire("functions.quickfix")
+safeRequire("core.backdrop-underline-fix")
 
 -- lazy-load spellfixes
 vim.api.nvim_create_autocmd("InsertEnter", {

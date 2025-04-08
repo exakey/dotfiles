@@ -33,10 +33,10 @@ return {
                         keyword           = "wide_bg",
                         before            = "",
                         after             = "",
-                        pattern           = [[.*<(KEYWORDS)\s*]],
+                        pattern           = [[.*<(KEYWORDS)\s*:]],
                 },
                 merge_keywords = false,
                 gui_style      = { fg = "NONE", bg = "BOLD" },
-                pattern        = [[\b(KEYWORDS)\b]]
+                pattern        = [[\b(KEYWORDS):]]
         },
 }

@@ -88,7 +88,7 @@ return {
                 },
 
                 fuzzy      = {
-                        implementation = "lua",
+                        implementation = "rust",
                         use_frecency   = true,
                         use_proximity  = true,
                         sorts          = { "score", "sort_text" }
@@ -142,7 +142,7 @@ return {
                         default      = function(ctx)
                                 local success, node = pcall(vim.treesitter.get_node)
                                 if vim.bo.filetype == "lua" then
-                                        return { "snippets", "lazydev", "lsp", "path", "ripgrep", "nerdfont" }
+                                        return { "snippets", "lsp", "path", "ripgrep", "nerdfont" }
                                 elseif vim.bo.filetype == "c" or "cpp" then
                                         return { "snippets", "lsp", "path", "buffer", "nerdfont" }
                                 elseif vim.bo.filetype == "css" then
@@ -157,20 +157,20 @@ return {
                         providers    = {
 
                                 lazydev  = {
-                                        name         = "LazyDev",
+                                        name         = "Lazydev",
                                         module       = "lazydev.integrations.blink",
                                         score_offset = 220,
                                 },
 
                                 snippets = {
                                         name         = "Snip",
-                                        score_offset = 160,
+                                        score_offset = 140,
                                 },
 
                                 lsp      = {
                                         name         = "LSP",
                                         module       = "blink.cmp.sources.lsp",
-                                        score_offset = 140,
+                                        score_offset = 160,
                                         enabled      = function()
                                                 if vim.bo.ft ~= "lua" then return true end
                                                 local col                 = vim.api.nvim_win_get_cursor(0)[2]
@@ -246,8 +246,8 @@ return {
                                 ripgrep  = {
                                         module       = "blink-cmp-rg",
                                         name         = "RG",
-                                        score_offset = 60,
-                                        max_items    = 20,
+                                        score_offset = 10,
+                                        max_items    = 10,
                                         opts         = {
                                                 prefix_min_len = 3,
                                                 get_command    = function(context, prefix)

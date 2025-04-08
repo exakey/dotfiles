@@ -12,14 +12,19 @@ return {
                                 callSnippet    = "Replace", -- functions -> no replace snippet
                                 keywordSnippet = "Replace", -- keywords -> replace
                                 showWord       = "Disable", -- already done by completion plugin
-                                workspaceWord  = false,     -- already done by completion plugin
+                                workspaceWord  = true,      -- already done by completion plugin
                                 postfix        = ".",       -- useful for `table.insert` and the like
                         },
                         -- FIX https://github.com/sumneko/lua-language-server/issues/679#issuecomment-925524834
                         workspace   = {
-                                checkThirdParty                      = "Disable",
-                                [vim.fn.expand("$VIMRUNTIME/lua")]   = true,
-                                [vim.fn.stdpath("config") .. "/lua"] = true,
+                                checkThirdParty = false,
+                                library         = {
+                                        -- vim.env.VIMRUNTIME,
+                                        vim.fn.stdpath("config"),
+                                        -- "${3rd}/luv/library",
+                                        -- "${3rd}/busted/library",
+                                        -- "$HOME/.local/share/nvim/lazy/",
+                                },
                         },
                 },
         }
