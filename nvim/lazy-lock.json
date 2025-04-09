@@ -64,7 +64,6 @@
   "symbol-usage.nvim": { "branch": "main", "commit": "0f9b3da014b7e41559b643e7461fcabb2a7dc83a" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
-  "thanks.nvim": { "branch": "main", "commit": "ec5eedab29b734c31050b6618fc58d1107ce8b4c" },
   "tiny-code-action.nvim": { "branch": "main", "commit": "cc2f6045e67e01355c49fea10568baba856e844a" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "15becb1c2a4b90321214d3db45fe36829fc48b8d" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
