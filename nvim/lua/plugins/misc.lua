@@ -16,11 +16,6 @@ return {
                 end
         },
         {
-                'jsongerber/thanks.nvim',
-                event  = "VimEnter",
-                config = true,
-        },
-        {
                 "anuvyklack/keymap-amend.nvim",
                 event = "VeryLazy",
         },
