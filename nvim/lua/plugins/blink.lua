@@ -275,6 +275,8 @@ return {
                         preset        = "none",
                         ["<A-h>"]     = { "snippet_backward", "fallback" },
                         ["<A-l>"]     = { "snippet_forward", "fallback" },
+                        ["<A-j>"]     = { "scroll_documentation_down", "fallback" },
+                        ["<A-k>"]     = { "scroll_documentation_up", "fallback" },
                         ["<C-j>"]     = { "select_next", "fallback" },
                         ["<C-k>"]     = { "select_prev", "fallback" },
                         ["<C-c>"]     = { function(cmp) if cmp.is_menu_visible() then cmp.hide() else cmp.show() end end },
