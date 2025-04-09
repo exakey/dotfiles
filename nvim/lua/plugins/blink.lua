@@ -17,8 +17,8 @@ end
 
 return {
         "saghen/blink.cmp",
-        event        = "VeryLazy",
-        build        = "cargo build --release",
+        event   = "VeryLazy",
+        build   = "cargo build --release",
 
         dependencies = {
                 {

@@ -12,7 +12,7 @@ return {
                         vertical     = " │",
                         vertical_end = " └",
                 },
-                blend   = { factor = 0.05 },
+                blend   = { factor = 0.15 },
                 hi      = { error = "DiagnosticError", warn = "DiagnosticWarn", info = "DiagnosticInfo", hint = "DiagnosticHint", arrow = "NonText" },
                 options = {
                         show_source                  = false,

@@ -19,9 +19,9 @@ return {
                         workspace   = {
                                 checkThirdParty = false,
                                 library         = {
-                                        -- vim.env.VIMRUNTIME,
+                                        vim.env.VIMRUNTIME,
                                         vim.fn.stdpath("config"),
-                                        -- "${3rd}/luv/library",
+                                        "${3rd}/luv/library",
                                         -- "${3rd}/busted/library",
                                         -- "$HOME/.local/share/nvim/lazy/",
                                 },
