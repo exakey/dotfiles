@@ -108,7 +108,7 @@ const vec3[24] samples = { vec3(0.1693761725038636, 0.9855514761735895, 1),
 // Chromatic aberration time variation
 float offsetFunction(float iTime)
 {
-	float amount = 1.0;
+	float amount = 1.2;
 	const float periods[4] = { 6.0, 16.0, 19.0, 27.0 };
 	for (int i = 0; i < 4; i++) {
 		amount *= 1.0 + 0.5 * sin(iTime * periods[i]);
