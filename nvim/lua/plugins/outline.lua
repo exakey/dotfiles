@@ -3,7 +3,7 @@ return
         "hedyhli/outline.nvim",
         event  = "LspAttach",
         cmd    = { "Outline", "OutlineOpen" },
-        keys   = { { ",s", "<cmd>Outline<cr>", desc = "Outline", mode = { "n" } } },
+        keys   = { { "<A-o>", "<cmd>Outline<cr>", desc = "Outline", mode = { "n" } } },
 
         config = function()
                 require("outline").setup({
