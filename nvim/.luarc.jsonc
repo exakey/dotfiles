@@ -1,0 +1,9 @@
+{
+        "workspace.library": [
+                "${3rd}/luv/library",
+                "$HOME/.config/",
+        ],
+        "runtime.version": "LuaJIT",
+        "hint.enable": false
+        "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+}

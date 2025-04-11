@@ -4,8 +4,8 @@ return {
         filetypes    = { "lua" },
         settings     = {
                 Lua = {
-                        diagnostics = { disable = { "trailing-space", "unused-function" } },
-                        hint        = { enable = true, setType = true, arrayIndex = "Disable", semicolon = "Disable" },
+                        diagnostics = { disable = { "trailing-space", "unused-function", "lowercase-global" } },
+                        hint        = { enable = true, setType = true, arrayIndex = "Auto", semicolon = "Disable" },
                         format      = { enable = true },
                         semantic    = { enable = true },
                         completion  = {
@@ -19,9 +19,9 @@ return {
                         workspace   = {
                                 checkThirdParty = false,
                                 library         = {
-                                        vim.env.VIMRUNTIME,
-                                        vim.fn.stdpath("config"),
-                                        "${3rd}/luv/library",
+                                        -- vim.env.VIMRUNTIME,
+                                        -- vim.fn.stdpath("config"),
+                                        -- "${3rd}/luv/library",
                                         -- "${3rd}/busted/library",
                                         -- "$HOME/.local/share/nvim/lazy/",
                                 },

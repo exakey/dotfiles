@@ -3,5 +3,7 @@ return {
         version = false,
         event   = "VeryLazy",
         keys    = { { "<leader><leader>e", function() MiniFiles.open() end, desc = "mini-files" } },
-        -- require("mini.files").setup(),
+        confif  = function()
+                require("mini.files").setup()
+        end
 }
