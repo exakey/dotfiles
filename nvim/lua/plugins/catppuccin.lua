@@ -92,7 +92,7 @@ local customCol = function(colors)
                 BlinkCmpAbbrMatch                = { fg = colors.text, bg = blinkBg, bold = false },
                 BlinkCmpAbbrMatchFuzzy           = { fg = colors.text, bg = blinkBg, bold = false },
                 BlinkCmpMenu                     = { fg = colors.overlay0, bg = colors.crust, bold = false },
-                BlinkCmpMenuSelection            = { fg = blinkBg, bg = colors.mantle, bold = true },
+                BlinkCmpMenuSelection            = { fg = blinkBg, bg = colors.crust, bold = true },
                 BlinkCmpKindField                = { fg = colors.rosewater, bg = blinkBg },
                 BlinkCmpKindProperty             = { fg = colors.rosewater, bg = blinkBg },
                 BlinkCmpKindEvent                = { fg = colors.rosewater, bg = blinkBg },
@@ -220,15 +220,15 @@ local customCol = function(colors)
                 DropBarIconUiSeparatormenu       = { fg = colors.rosewater, bg = colors.mantle },
                 -- DropBarFileName                  = { fg = "#dce0e8", italics = false },
 
-                DropBarMenuCurrentContext        = { fg = colors.red, bg = colors.mantle },
+                DropBarMenuCurrentContext        = { bg = colors.mantle, bold = true },
                 DropBarMenuFloatBorder           = { fg = colors.rosewater, bg = colors.mantle },
                 DropBarMenuHoverEntry            = { fg = colors.red, bg = colors.mantle },
-                DropBarMenuHoverIcon             = { reverse = false, fg = colors.red, bg = colors.base },
-                DropBarMenuHoverSymbol           = { bold = true, fg = colors.rosewater, bg = colors.mantle },
+                DropBarMenuHoverIcon             = { fg = colors.red, bg = colors.mantle, reverse = false },
+                DropBarMenuHoverSymbol           = { fg = colors.rosewater, bg = colors.mantle, bold = true },
                 DropBarMenuNormalFloat           = { fg = colors.rosewater, bg = colors.mantle },
                 DropBarMenuSbar                  = { fg = colors.red, bg = colors.mantle },
                 DropBarMenuThumb                 = { fg = colors.rosewater, bg = colors.mantle },
-                DropBarPreview                   = { fg = colors.rosewater, bg = colors.base },
+                DropBarPreview                   = { bg = colors.crust, bold = true },
 
                 -------------------------------------------------------------------------------------------------------------
                 -- DROPBAR KIND

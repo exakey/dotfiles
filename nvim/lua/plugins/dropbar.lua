@@ -76,7 +76,9 @@ return {
         lazy         = false,
         event        = "LspAttach",
         dependencies = { "nvim-telescope/telescope-fzf-native.nvim" },
-        keys         = { { "<A-q>", function() require('dropbar.api').pick() end, desc = "Toggle dropbar", mode = { "n" } } },
+        keys         = {
+                { "<A-q>", function() require("dropbar.api").pick() end, desc = "Toggle dropbar", mode = { "n" } },
+        },
 
         opts         = {
                 bar   = { truncate = true, pick = { pivots = "123456789abcdefghijklmnopqrstuvwxyz" } },
