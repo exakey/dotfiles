@@ -7,8 +7,8 @@ return {
                 event  = { "InsertEnter", "CmdlineEnter" },
                 keys   = {
                         -- Open new scope (`remap` to trigger auto-pairing)
-                        { "<A-o>", "a{<CR>", desc = " Open new scope", remap = true },
-                        { "<A-o>", "{<CR>", mode = "i", desc = " Open new scope", remap = true },
+                        { "<A-i>", "a{<CR>", desc = " Open new scope", remap = true },
+                        { "<A-i>", "{<CR>", mode = "i", desc = " Open new scope", remap = true },
                 },
                 opts   = {
                         bs                    = {
