@@ -24,8 +24,8 @@ return {
                 { -- FILES
                         "<leader><leader>f",
                         function() Snacks.picker.files({ layout = "vertical", hidden = true }) end,
-                        desc   = "File Picker",
-                        mode   = { "n" },
+                        desc = "File Picker",
+                        mode = { "n" },
                 },
                 { -- KEYMAPS
                         "<leader><leader>k",
@@ -80,8 +80,10 @@ return {
                         desc = "Buffer Picker",
                         mode = { "n" },
                 },
+
+                -- LSP PICKERS
                 { -- REFERENCES
-                        "<leader><leader>r",
+                        ",r",
                         function()
                                 Snacks.picker.lsp_references({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -91,7 +93,7 @@ return {
                         mode = { "n" }
                 },
                 { -- IMPLEMENTATIONS
-                        "<leader><leader>i",
+                        ",i",
                         function()
                                 Snacks.picker.lsp_implementations({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -101,7 +103,7 @@ return {
                         mode = { "n" }
                 },
                 { -- DEFINITIONS
-                        "<leader><leader>d",
+                        ",d",
                         function()
                                 Snacks.picker.lsp_definitions({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -110,10 +112,40 @@ return {
                         desc = "Show Definitions",
                         mode = { "n" }
                 },
-                { -- DECLARATIONS
+                { -- SYMBOLS
+                        ",s",
+                        function()
+                                Snacks.picker.lsp_symbols({
+                                        on_show = function() vim.cmd.stopinsert() end,
+                                })
+                        end,
+                        desc = "Show Declarations",
+                        mode = { "n" }
+                },
+                { -- WORKSPACE SYMBOLS
+                        ",S",
+                        function()
+                                Snacks.picker.lsp_workspace_symbols({
+                                        on_show = function() vim.cmd.stopinsert() end,
+                                })
+                        end,
+                        desc = "Show Declarations",
+                        mode = { "n" }
+                },
+                { -- BUFFER DIAGNOSTICS
+                        "<leader><leader>d",
+                        function()
+                                Snacks.picker.diagnostics_buffer({
+                                        on_show = function() vim.cmd.stopinsert() end,
+                                })
+                        end,
+                        desc = "Show Declarations",
+                        mode = { "n" }
+                },
+                { -- DIAGNOSTICS
                         "<leader><leader>D",
                         function()
-                                Snacks.picker.lsp_declarations({
+                                Snacks.picker.diagnostics({
                                         on_show = function() vim.cmd.stopinsert() end,
                                 })
                         end,
@@ -126,7 +158,7 @@ return {
                 ------------------------------------------------------------------------
                 -- STYLES
 
-                styles   = {
+                styles    = {
                         float                = { backdrop = vim.g.backdrop },
                         input                = {
                                 backdrop = true,
@@ -146,13 +178,13 @@ return {
                         notification_history = { width = 0.9, height = 0.9 }
                 },
 
-                lazygit  = { enabled = true },
-                words    = { enabled = false },
+                lazygit   = { enabled = true },
+                words     = { enabled = false },
 
                 ----------------------------------------------------------------
                 -- DIM
 
-                dim      = {
+                dim       = {
                         {
                                 scope = {
                                         min_size = 5,
@@ -165,7 +197,7 @@ return {
                 ----------------------------------------------------------------
                 -- NOTIFIER
 
-                notifier = {
+                notifier  = {
                         icons   = { error = " ■", warn = " ■", info = " ■", debug = " ■", trace = " ■" },
                         style   = "minimal",
                         enabled = true,
@@ -175,7 +207,7 @@ return {
                 ----------------------------------------------------------------
                 -- PICKERS
 
-                picker   = {
+                picker    = {
                         hidden  = true,
                         ignored = true,
                         formats = { file = { filename_only = true } },
@@ -305,7 +337,7 @@ return {
                 ----------------------------------------------------------------
                 -- IMAGE
 
-                image    = {
+                image     = {
                         formats  = { "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif", "mp4", "mov", "avi", "mkv", "webm", "pdf" },
                         force    = false,
                         doc      = {

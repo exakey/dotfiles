@@ -193,13 +193,13 @@ map(n, "qO", function() require("functions.comment").addComment("above") end, { 
 -- LSP
 
 map(nx, "K", vim.lsp.buf.signature_help({
-        max_width   = 75,
-        wrap        = false,
-        title       = " LSP Hover ",
-        border      = { "", "", "", "", "", "", "", "", },
-        anchor_bias = "below",
-        relative    = "cursor",
-}), { desc = "󰏪 LSP Signature", silent = true })
+                max_width   = 75,
+                wrap        = false,
+                title       = " LSP Hover ",
+                border      = { "", "", "", "", "", "", "", "", },
+                anchor_bias = "below",
+                relative    = "cursor",
+        }), { desc = "󰏪 LSP Signature", silent = true })
 -- map(nx, "<leader>f", function() require("functions.nano-plugins").formatWithFallback() end, { desc = "󱉯 Format", silent = true })
 map(niv, ",c", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
 map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action() end,
@@ -207,9 +207,9 @@ map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action(
 
 -- GOTO
 map(n, ",D", "gD", { desc = "Goto Declaration", silent = true })
-map(n, ",d", "gd", { desc = "Goto Definition", silent = true })
+-- map(n, ",d", "gd", { desc = "Goto Definition", silent = true })
 map(n, ",f", "gf", { desc = "Goto File", silent = true })
-map(n, ",i", "gri", { desc = "Goto Implementation", silent = true })
+-- map(n, ",i", "gri", { desc = "Goto Implementation", silent = true })
 
 do
         map(nx, "<leader>h", vim.lsp.buf.hover({
@@ -337,7 +337,7 @@ map(n, "<leader>on", "<cmd>set number!<CR>", { desc = " Line numbers", silent
 map(n, "<leader>ow", "<cmd>set wrap!<CR>", { desc = "󰖶 Wrap", silent = true })
 
 map(n, "<leader>od", function()
-        vim.diagnostic.enable(not vim.diagnostic.is_enabled { bufnr = 0 }, { bufnr = 0 })
+        vim.diagnostic.enable(not vim.diagnostic.is_enabled)
 end, { desc = "󰋽 Diagnostics", silent = true })
 
 map(n, "<leader>oc", function() vim.wo.conceallevel = vim.wo.conceallevel == 0 and 2 or 0 end,
