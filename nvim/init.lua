@@ -38,6 +38,7 @@ if not vim.env.NO_PLUGINS then
         if vim.g.setColorscheme then vim.g.setColorscheme("init") end
 end
 
+safeRequire("core.commands")
 safeRequire("core.autocmds")
 safeRequire("core.diagnostics")
 safeRequire("core.keymaps")
