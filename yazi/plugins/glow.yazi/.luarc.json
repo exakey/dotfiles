@@ -1,0 +1,16 @@
+{
+    "diagnostics.globals": [
+        "bit",
+        "vim",
+        "it",
+        "describe",
+        "before_each",
+        "after_each",
+        "PREVIEW",
+        "ya",
+        "Command",
+        "job",
+        "ui",
+        "cx"
+    ]
+}
