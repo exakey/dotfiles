@@ -17,8 +17,8 @@ return {
                         enable_named_colors     = false,
                         enable_tailwind         = true,
                         custom_colors           = {
-                                { label = "colors.ivory",     color = "#dce0e8" },
                                 { label = "ivory",            color = "#dce0e8" },
+                                { label = "colors.ivory",     color = "#dce0e8" },
                                 { label = "colors.rosewater", color = "#f5e0dc" },
                                 { label = "colors.flamingo",  color = "#f2cdcd" },
                                 { label = "colors.pink",      color = "#f5c2e7" },

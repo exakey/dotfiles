@@ -62,7 +62,7 @@ return {
                                         },
                                 },
                         },
-                        documentation = { border = "none", auto_show = true, auto_show_delay_ms = 250 },
+                        documentation = { auto_show = true, auto_show_delay_ms = 250 },
                         ghost_text    = { enabled = false },
                         trigger       = { prefetch_on_insert = true },
                 },
