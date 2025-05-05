@@ -137,9 +137,8 @@ map({ "i", "c" }, "<C-d>", "<Backspace>", { desc = "Delete", silent = true })
 map(n, "<C-S-a>", "ggVG", { desc = "Select all", silent = true })
 
 -- Save file
-vim.keymap.del(i, "<C-s>")
-map(ni, "<C-s>", "<cmd>w<CR><esc>", { desc = "Save File", silent = true })
-map(ni, "<C-S-s>", "<cmd>wa<CR><esc>", { desc = "Save File", silent = true })
+map(ni, ",w", "<cmd>w<CR><esc>", { desc = "Save File", silent = true })
+map(ni, ",W", "<cmd>wa<CR><esc>", { desc = "Save File", silent = true })
 
 ------------------------------------------------------------------------------------------------------------------------
 -- SURROUND
@@ -193,7 +192,8 @@ map(n, "qO", function() require("functions.comment").addComment("above") end, { 
 ------------------------------------------------------------------------------------------------------------------------
 -- LSP
 
-map(nx, "K", vim.lsp.buf.signature_help, { desc = "󰏪 LSP Signature", silent = true })
+map(nx, "K", vim.lsp.buf.hover, { desc = "󰏪 LSP Hover", silent = true })
+map(nx, "J", vim.lsp.buf.signature_help, { desc = "󰏪 LSP Signature", silent = true })
 -- map(nx, "<leader>f", function() require("functions.nano-plugins").formatWithFallback() end, { desc = "󱉯 Format", silent = true })
 map(nix, "<C-.>", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
 map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action() end,

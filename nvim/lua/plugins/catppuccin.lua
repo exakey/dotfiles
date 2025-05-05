@@ -422,6 +422,11 @@ local customCol = function(colors)
                 NeoTreeModified                  = { link = "Normal" },
                 NeoTreeRootName                  = { link = "CursorLineNr" },
 
+                --------------------------------------------------------------------------------------------------------
+                -- MISC
+
+                LspInlayHint                     = { fg = colors.surface2, bg = colors.base }
+
         }
 end
 
