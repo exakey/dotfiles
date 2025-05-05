@@ -57,7 +57,5 @@ return {
         },
         config = function(_, opts)
                 require("flash").setup(opts)
-                vim.api.nvim_set_hl(0, "FlashMatch", { link = "Function" })
-                vim.api.nvim_set_hl(0, "FlashLabel", { link = "DiagnosticError" })
         end
 }

@@ -1,9 +1,3 @@
-vim.api.nvim_set_hl(0, "NoiceCmdline", { link = "NormalFloat" })
-vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { link = "NormalFloat" })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "FloatBorder" })
-vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { link = "Title" })
-
 return {
         "folke/noice.nvim",
         event  = "VeryLazy",

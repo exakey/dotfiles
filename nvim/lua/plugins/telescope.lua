@@ -48,20 +48,5 @@ return {
                                 },
                         },
                 })
-
-                vim.api.nvim_set_hl(0, "TelescopePromptCount", { link = "Normal" })
-                vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "DiagnosticError" })
-                vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { link = "DiagnosticError" })
-                vim.api.nvim_set_hl(0, "TelescopePromptNormal", { link = "Normal" })
-                vim.api.nvim_set_hl(0, "TelescopePromptBorder", { link = "FloatBorder" })
-                vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { link = "DiagnosticError" })
-                vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { link = "NonText" })
-                vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { link = "FloatBorder" })
-                vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { link = "DiagnosticError" })
-                vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { link = "Normal" })
-                vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { link = "FloatBorder" })
-                vim.api.nvim_set_hl(0, "TelescopeSelection", { link = "Visual" })
-                vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { link = "Visual" })
-
         end,
 }

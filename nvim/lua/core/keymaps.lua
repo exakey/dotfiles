@@ -137,8 +137,9 @@ map({ "i", "c" }, "<C-d>", "<Backspace>", { desc = "Delete", silent = true })
 map(n, "<C-S-a>", "ggVG", { desc = "Select all", silent = true })
 
 -- Save file
-map(ni, ",w", "<cmd>w<CR><esc>", { desc = "Save File", silent = true })
-map(ni, ",W", "<cmd>wa<CR><esc>", { desc = "Save File", silent = true })
+vim.keymap.del(i, "<C-s>")
+map(ni, "<C-s>", "<cmd>w<CR><esc>", { desc = "Save File", silent = true })
+map(ni, "<C-S-s>", "<cmd>wa<CR><esc>", { desc = "Save File", silent = true })
 
 ------------------------------------------------------------------------------------------------------------------------
 -- SURROUND

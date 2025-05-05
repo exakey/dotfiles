@@ -1,3 +1,6 @@
+local button = "Error"
+local label  = "Normal"
+
 return {
         "folke/snacks.nvim",
         lazy     = false,
@@ -426,11 +429,11 @@ return {
                                 },
                                 { -- NEW FILE
                                         text    = {
-                                                { "󰻭  ", hl = "Title" },
-                                                { "New file", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "n", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰻭  ", hl = button },
+                                                { "New file", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "n", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "n",
                                         action  = "<cmd> enew <BAR> startinsert <CR>",
@@ -439,11 +442,11 @@ return {
                                 },
                                 { -- RECENT FILES
                                         text    = {
-                                                { "󰕁  ", hl = "Title" },
-                                                { "Recent files", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "r", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰕁  ", hl = button },
+                                                { "Recent files", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "r", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "r",
                                         action  = function() Snacks.picker.recent({ layout = "vertical" }) end,
@@ -452,11 +455,11 @@ return {
                                 },
                                 { -- FIND FILE
                                         text    = {
-                                                { "󰱽  ", hl = "Title" },
-                                                { "Find file", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "f", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰱽  ", hl = button },
+                                                { "Find file", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "f", hl = label },
+                                                { "]", hl = button },
                                         },
                                         action  = function() Snacks.picker.files({ layout = "vertical" }) end,
                                         key     = "f",
@@ -465,11 +468,11 @@ return {
                                 },
                                 { -- FIND TEXT
                                         text    = {
-                                                { "󰦪  ", hl = "Title" },
-                                                { "Find text", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "w", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰦪  ", hl = button },
+                                                { "Find text", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "w", hl = label },
+                                                { "]", hl = button },
                                         },
                                         action  = function() Snacks.picker.grep({ layout = "vertical" }) end,
                                         key     = "w",
@@ -478,11 +481,11 @@ return {
                                 },
                                 { -- RESTORE SESSION
                                         text    = {
-                                                { "󰦛  ", hl = "Title" },
-                                                { "Restore session", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "s", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰦛  ", hl = button },
+                                                { "Restore session", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "s", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "s",
                                         action  = [[<cmd> lua require("persistence").load({ last = false }) <cr>]],
@@ -491,11 +494,11 @@ return {
                                 },
                                 { -- CONFIG
                                         text    = {
-                                                { "󱤸  ", hl = "Title" },
-                                                { "Config", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "c", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󱤸  ", hl = button },
+                                                { "Config", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "c", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "c",
                                         action  = function() Snacks.picker.files() end,
@@ -504,11 +507,11 @@ return {
                                 },
                                 { -- LAZY
                                         text    = {
-                                                { "󰏗  ", hl = "Title" },
-                                                { "Lazy", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "l", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰏗  ", hl = button },
+                                                { "Lazy", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "l", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "l",
                                         action  = "<cmd> Lazy <CR>",
@@ -517,11 +520,11 @@ return {
                                 },
                                 { -- UPDATE
                                         text    = {
-                                                { "󱧕  ", hl = "Title" },
-                                                { "Update plugins", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "u", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󱧕  ", hl = button },
+                                                { "Update plugins", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "u", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "u",
                                         action  = "<cmd> Lazy update <CR>",
@@ -530,11 +533,11 @@ return {
                                 },
                                 { -- QUIT
                                         text    = {
-                                                { "󰈆  ", hl = "Title" },
-                                                { "Quit", hl = "Normal", width = 45 },
-                                                { "[", hl = "Title" },
-                                                { "q", hl = "Normal" },
-                                                { "]", hl = "Title" },
+                                                { "󰈆  ", hl = button },
+                                                { "Quit", hl = label, width = 45 },
+                                                { "[", hl = button },
+                                                { "q", hl = label },
+                                                { "]", hl = button },
                                         },
                                         key     = "q",
                                         action  = "<cmd> qa <CR>",

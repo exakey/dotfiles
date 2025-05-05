@@ -251,8 +251,8 @@ return {
                         ["<C-j>"]     = { "select_next", "fallback" },
                         ["<C-k>"]     = { "select_prev", "fallback" },
                         ["<C-c>"]     = { function(cmp) if cmp.is_menu_visible() then cmp.hide() else cmp.show() end end },
-                        ["<"]         = { "snippet_backward", "fallback" },
-                        [">"]         = { "snippet_forward", "fallback" },
+                        ["<Tab>"]         = { "snippet_backward", "fallback" },
+                        ["<S-Tab>"]         = { "snippet_forward", "fallback" },
                         ["<C-Space>"] = {
                                 function(cmp)
                                         if cmp.is_menu_visible() then

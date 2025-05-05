@@ -33,10 +33,6 @@ local icons = {
         Variable      = { icon = "", hl = "@lsp.type.variable" },
 }
 
-vim.api.nvim_set_hl(0, "OutlineCurrent", { link = "Visual" })
-vim.api.nvim_set_hl(0, "OutlineDetails", { link = "NonText" })
-vim.api.nvim_set_hl(0, "OutlineFoldMarker", { link = "NonText" })
-
 return {
         "hedyhli/outline.nvim",
         event = "LspAttach",

@@ -31,8 +31,8 @@ local customCol = function(colors)
                 FloatBorder                      = { fg = colors.mantle, bg = colors.mantle },
                 FloatTitle                       = { fg = colors.red, bg = colors.mantle },
                 -- FoldColumn                    = {},
-                Folded                           = { link = "Visual" },
                 FoldColumn                       = { link = "NonText" },
+                Folded                           = { link = "Visual" },
                 Function                         = { fg = ivory },
                 GitSignsAdd                      = { bg = colors.crust },
                 GitSignsChange                   = { bg = colors.crust },
@@ -49,6 +49,7 @@ local customCol = function(colors)
                 NonText                          = { fg = colors.surface0 },
                 Normal                           = { bg = colors.crust },
                 NormalFloat                      = { bg = colors.mantle },
+                NormalNC                         = { link = "Normal" },
                 Number                           = { fg = colors.peach },
                 Pmenu                            = { bg = colors.crust },
                 -- PmenuSbar                     = { bg = colors.},
@@ -83,6 +84,7 @@ local customCol = function(colors)
                 -- VisualNOS                     = { fg = colors.},
                 WarningMsg                       = { fg = colors.yellow },
                 WildMenu                         = { bg = colors.mantle },
+                WinSeparator                     = { link = "LineNr" },
 
                 --------------------------------------------------------------------------------------------------------
                 -- TREESITTER
@@ -206,7 +208,6 @@ local customCol = function(colors)
                 BlinkCmpKindValue                = { link = "@lsp.type.enumMember" },
                 BlinkCmpKindVariable             = { link = "@lsp.type.type" },
                 BlinkCmpAbbrDeprecated           = { link = "DiagnosticDeprecated" },
-
                 BlinkCmpLabelDescription         = { link = "NonText" },
                 BlinkCmpLabelDetail              = { link = "NonText" },
                 BlinkCmpLabelMatch               = { link = "Visual" },
@@ -423,9 +424,43 @@ local customCol = function(colors)
                 NeoTreeRootName                  = { link = "CursorLineNr" },
 
                 --------------------------------------------------------------------------------------------------------
+                -- TELESCOPE
+
+                TelescopePromptCount             = { link = "Normal" },
+                TelescopePromptTitle             = { link = "DiagnosticError" },
+                TelescopePromptPrefix            = { link = "DiagnosticError" },
+                TelescopePromptNormal            = { link = "Normal" },
+                TelescopePromptBorder            = { link = "FloatBorder" },
+                TelescopeResultsTitle            = { link = "DiagnosticError" },
+                TelescopeResultsNormal           = { link = "NonText" },
+                TelescopeResultsBorder           = { link = "FloatBorder" },
+                TelescopePreviewTitle            = { link = "DiagnosticError" },
+                TelescopePreviewNormal           = { link = "Normal" },
+                TelescopePreviewBorder           = { link = "FloatBorder" },
+                TelescopeSelection               = { link = "Visual" },
+                TelescopeSelectionCaret          = { link = "Visual" },
+
+                --------------------------------------------------------------------------------------------------------
+                -- NOICE
+
+                NoiceCmdline                     = { link = "NormalFloat" },
+                NoiceConfirmBorder               = { link = "FloatBorder" },
+                NoiceCmdlinePopup                = { link = "NormalFloat" },
+                NoiceCmdlinePopupBorder          = { link = "FloatBorder" },
+                NoiceCmdlineIcon                 = { link = "Title" },
+
+                --------------------------------------------------------------------------------------------------------
                 -- MISC
 
-                LspInlayHint                     = { fg = colors.surface2, bg = colors.base }
+                LspInlayHint                     = { fg = colors.surface2, bg = colors.base },
+                OutlineCurrent                   = { link = "Visual" },
+                OutlineDetails                   = { link = "NonText" },
+                OutlineFoldMarker                = { link = "NonText" },
+                FlashMatch                       = { link = "Function" },
+                FlashLabel                       = { link = "DiagnosticError" },
+                MiniFilesDirectory               = { link = "Function" },
+                MiniFilesFile                    = { link = "NonText" },
+                MiniFilesCursorLine              = { link = "Visual" },
 
         }
 end
