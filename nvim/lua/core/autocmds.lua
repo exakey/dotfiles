@@ -1,27 +1,27 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- AUTO-CD TO PROJECT ROOT
 
-local autoCdConfig = {
-        childOfRoot = {
-                ".git",
-        },
-        parentOfRoot = {
-                ".config",
-                vim.fs.basename(vim.env.HOME),
-        },
-}
-vim.api.nvim_create_autocmd("VimEnter", {
-        desc     = "User: Auto-cd to project root",
-        callback = function(ctx)
-                local root = vim.fs.root(ctx.buf, function(name, path)
-                        local parentName         = vim.fs.basename(vim.fs.dirname(path))
-                        local dirHasParentMarker = vim.tbl_contains(autoCdConfig.parentOfRoot, parentName)
-                        local dirHasChildMarker  = vim.tbl_contains(autoCdConfig.childOfRoot, name)
-                        return dirHasChildMarker or dirHasParentMarker
-                end)
-                if root and root ~= "" then vim.uv.chdir(root) end
-        end,
-})
+-- local autoCdConfig = {
+--         childOfRoot = {
+--                 ".git",
+--         },
+--         parentOfRoot = {
+--                 ".config",
+--                 vim.fs.basename(vim.env.HOME),
+--         },
+-- }
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--         desc     = "User: Auto-cd to project root",
+--         callback = function(ctx)
+--                 local root = vim.fs.root(ctx.buf, function(name, path)
+--                         local parentName         = vim.fs.basename(vim.fs.dirname(path))
+--                         local dirHasParentMarker = vim.tbl_contains(autoCdConfig.parentOfRoot, parentName)
+--                         local dirHasChildMarker  = vim.tbl_contains(autoCdConfig.childOfRoot, name)
+--                         return dirHasChildMarker or dirHasParentMarker
+--                 end)
+--                 if root and root ~= "" then vim.uv.chdir(root) end
+--         end,
+-- })
 
 ------------------------------------------------------------------------------------------------------------------------
 

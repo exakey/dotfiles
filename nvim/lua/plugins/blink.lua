@@ -251,8 +251,25 @@ return {
                         ["<C-j>"]     = { "select_next", "fallback" },
                         ["<C-k>"]     = { "select_prev", "fallback" },
                         ["<C-c>"]     = { function(cmp) if cmp.is_menu_visible() then cmp.hide() else cmp.show() end end },
-                        ["<Tab>"]         = { "snippet_backward", "fallback" },
-                        ["<S-Tab>"]         = { "snippet_forward", "fallback" },
+                        ["<Tab>"]     = { "snippet_forward", "fallback" },
+                        ["<S-Tab>"]   = { "snippet_backward", "fallback" },
+                        -- ["<Tab>"]     = {
+                        --         function(cmp)
+                        --                 local has_words_before = function()
+                        --                         local col = vim.api.nvim_win_get_cursor(0)[2]
+                        --                         if col == 0 then
+                        --                                 return false
+                        --                         end
+                        --                         return vim.api.nvim_get_current_line():sub(col, col):match("%s") == nil
+                        --                 end
+                        --                 if has_words_before() then
+                        --                         return cmp.select_next()
+                        --                 end
+                        --         end,
+                        --         "snippet_forward",
+                        --         "fallback",
+                        -- },
+                        -- ["<S-Tab>"]   = { "insert_prev", "snippet_backward", "fallback" },
                         ["<C-Space>"] = {
                                 function(cmp)
                                         if cmp.is_menu_visible() then
