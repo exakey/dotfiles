@@ -294,7 +294,7 @@ map(n, "<leader>fd", ":global //d<Left><Left>", { desc = " delete matching li
 map(n, "<leader>rc", function() require("functions.nano-plugins").camelSnakeLspRename() end,
         { desc = "󰑕 LSP rename: camel/snake", silent = true })
 
-map(nx, "<leader>rq", function()
+map(nx, "<leader>qq", function()
         local line        = vim.api.nvim_get_current_line()
         local updatedLine = line:gsub("[\"']", function(q) return (q == [["]] and [[']] or [["]]) end)
         vim.api.nvim_set_current_line(updatedLine)

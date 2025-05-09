@@ -142,7 +142,7 @@ local customCol = function(colors)
                 ["@variable.builtin"]            = { fg = colors.red, bg = "none" },
                 ["@variable"]                    = { fg = colors.red, bg = "none" },
                 ["@variable.member"]             = { fg = ivory, bg = "none" },
-                ["@variable.parameter"]          = { fg = colors.mauve },
+                ["@variable.parameter"]          = { fg = colors.red },
 
                 --------------------------------------------------------------------------------------------------------
                 -- SEMANTIC TOKENS

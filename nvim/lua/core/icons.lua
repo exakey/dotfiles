@@ -1,6 +1,6 @@
 local M        = {}
 
---- Diagnostic severities.
+-- DIAGNOSTICS
 M.diagnostics  = {
         ERROR = "󰨓",
         WARN  = "󰨓",
@@ -8,7 +8,7 @@ M.diagnostics  = {
         INFO  = "󰨓",
 }
 
---- For folding.
+-- FOLDING
 M.arrows       = {
         close = "+",
         open  = "-",
@@ -18,7 +18,7 @@ M.arrows       = {
         down  = "",
 }
 
---- LSP symbol kinds.
+ -- LSP KINDS
 M.symbol_kinds = {
         Array             = "󰅪 ",
         Boolean           = " ",
@@ -98,7 +98,7 @@ M.symbol_kinds = {
         WhileStatement    = "󰑖 ",
 }
 
--- Misc
+-- MISC
 M.misc         = {
         bug          = "",
         ellipsis     = "…",

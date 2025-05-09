@@ -53,10 +53,10 @@
 
         # Permissions
         perm_type       = { fg = "#cdd6f4" }
-        perm_read       = { fg = "green" }
-        perm_write      = { fg = "green" }
-        perm_exec       = { fg = "red" }
-        perm_sep        = { fg = "#cdd6f4" }
+        perm_read       = { fg = "#a6e3a1" }
+        perm_write      = { fg = "#f9e2af" }
+        perm_exec       = { fg = "#f38ba8" }
+        perm_sep        = { fg = "#313244" }
 
 
 [input]
@@ -105,11 +105,11 @@
 [filetype]
 rules = [
         # Images
-        { mime = "image/*",                     fg = "#94e2d5" },
+        { mime = "image/*",                     fg = "#f9e2af" },
 
         # Videos
-        { mime = "video/*",                     fg = "#f9e2af" },
-        { mime = "audio/*",                     fg = "#f9e2af" },
+        { mime = "video/*",                     fg = "#94e2d5" },
+        { mime = "audio/*",                     fg = "#94e2d5" },
 
         # Archives
         { mime = "application/zip",             fg = "#f5c2e7" },

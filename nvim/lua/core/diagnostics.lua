@@ -1,3 +1,23 @@
+local numbers = {
+        text = {
+                [vim.diagnostic.severity.ERROR] = "",
+                [vim.diagnostic.severity.WARN]  = "",
+                [vim.diagnostic.severity.INFO]  = "",
+                [vim.diagnostic.severity.HINT]  = "",
+        },
+
+        numhl = {
+                [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+                [vim.diagnostic.severity.WARN]  = "WarningMsg",
+                [vim.diagnostic.severity.INFO]  = "DiagnosticInfo",
+                [vim.diagnostic.severity.HINT]  = "DiagnosticHint",
+        },
+}
+
+---@diagnostic disable-next-line: unused-local
+local icons   = require("core.icons").diagnostics
+
+------------------------------------------------------------------------------------------------------------------------
 -- HANDLERS
 
 -- `vim.lsp.buf.rename`: add notification & writeall to renaming
@@ -57,7 +77,7 @@ vim.lsp.buf.signature_help              = function()
         }
 end
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 -- LSP PROGRESS
 
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
@@ -105,7 +125,7 @@ vim.api.nvim_create_autocmd("LspProgress", {
         end,
 })
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 
 vim.api.nvim_create_user_command("LspCapabilities", function(ctx)
         local client = vim.lsp.get_clients({ name = ctx.args })[1]
@@ -129,34 +149,8 @@ end, {
         end,
 })
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 -- DIAGNOSTICS
-
-local numbers = {
-        text = {
-                [vim.diagnostic.severity.ERROR] = "",
-                [vim.diagnostic.severity.WARN]  = "",
-                [vim.diagnostic.severity.INFO]  = "",
-                [vim.diagnostic.severity.HINT]  = "",
-        },
-
-        numhl = {
-                [vim.diagnostic.severity.ERROR] = "ErrorMsg",
-                [vim.diagnostic.severity.WARN]  = "WarningMsg",
-                [vim.diagnostic.severity.INFO]  = "DiagnosticInfo",
-                [vim.diagnostic.severity.HINT]  = "DiagnosticHint",
-        },
-}
-
----@diagnostic disable-next-line: unused-local
-local icons   = {
-        text = {
-                [vim.diagnostic.severity.ERROR] = "󰨓",
-                [vim.diagnostic.severity.WARN]  = "󰨓",
-                [vim.diagnostic.severity.INFO]  = "󰨓",
-                [vim.diagnostic.severity.HINT]  = "󰨓",
-        },
-}
 
 vim.diagnostic.config {
         signs            = numbers,
@@ -164,4 +158,22 @@ vim.diagnostic.config {
         virtual_text     = false,
         update_in_insert = false,
         severity_sort    = true,
+
+        -- format           = function(diagnostic)
+        --         local special_sources = {
+        --                 ["Lua Diagnostics."]  = "lua",
+        --                 ["Lua Syntax Check."] = "lua",
+        --         }
+        --
+        --         local message         = icons[vim.diagnostic.severity[diagnostic.severity]]
+        --         if diagnostic.source then
+        --                 message = string.format("%s %s", message, special_sources[diagnostic.source] or diagnostic
+        --                         .source)
+        --         end
+        --         if diagnostic.code then
+        --                 message = string.format("%s[%s]", message, diagnostic.code)
+        --         end
+        --
+        --         return message .. " "
+        -- end,
 }

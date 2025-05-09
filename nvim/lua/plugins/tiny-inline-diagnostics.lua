@@ -1,3 +1,10 @@
+-- icons = require("core.icons").diagnostics
+icons = {
+        ERROR = "",
+        WARN  = "",
+        INFO  = "",
+        HINT  = "",
+}
 return {
         "rachartier/tiny-inline-diagnostic.nvim",
         enabled  = true,
@@ -29,7 +36,23 @@ return {
                         break_line                   = { enabled = false, after = 30 },
                         virt_texts                   = { priority = 99 },
                         format                       = function(diagnostic)
-                                return diagnostic.message .. " [" .. diagnostic.source .. "]"
+                                -- return diagnostic.message .. " [" .. diagnostic.source .. "]"
+                                local special_sources = {
+                                        ["Lua Diagnostics."]  = "lua",
+                                        ["Lua Syntax Check."] = "lua",
+                                }
+
+                                local message         = icons[vim.diagnostic.severity[diagnostic.severity]]
+                                if diagnostic.source then
+                                        message = string.format("%s %s", message,
+                                                special_sources[diagnostic.source] or diagnostic
+                                                .source)
+                                end
+                                if diagnostic.code then
+                                        message = string.format("%s [%s]", message, diagnostic.code)
+                                end
+
+                                return message
                         end,
                 },
         },
