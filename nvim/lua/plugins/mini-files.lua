@@ -3,6 +3,6 @@ return {
         version = false,
         event   = "VeryLazy",
         keys    = { { ",m", function() require("mini.files").open() end, desc = "mini-files" } },
-        config = function ()
+        config  = function ()
         end,
 }
