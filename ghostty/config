@@ -51,4 +51,4 @@ keybind = unconsumed:ctrl+shift+alt+c=copy_to_clipboard
 
 custom-shader-animation    = true
 # custom-shader              = ~/.config/ghostty/shaders/crt-chromatic.glsl
-# custom-shader              = ~/.config/ghostty/shaders/rgbsplit.glsl
+custom-shader              = ~/.config/ghostty/shaders/rgbsplit.glsl

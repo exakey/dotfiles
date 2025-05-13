@@ -11,13 +11,14 @@
 
 window#waybar {
         background: @main-bg;
+        /* background-image: url("/home/q/.config/hyde/themes/Darkpuccin/wallpapers/dodge left.png") */
 }
 
 #custom-updates {
         color: @module-fg;
         background: @main-bg;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 6px;
+        margin-bottom: 6px;
         margin-left: 5px;
         margin-right: 2px;
         padding-left: 2px;
@@ -78,6 +79,8 @@ window#waybar {
         color: @module-fg;
         background: @main-bg;
         margin-left: 0px;
+        margin-top: 6px;
+        margin-bottom: 6px;
 }
 
 #submap {
@@ -92,6 +95,8 @@ window#waybar {
         background-color: @main-bg;
         margin-left: 8px;
         margin-right: 0px;
+        margin-top: 6px;
+        margin-bottom: 6px;
 }
 
 #custom-media {
@@ -162,8 +167,8 @@ window#waybar {
         color: @module-fg;
         background: @main-bg;
         /*background: @main-bg;*/
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 6px;
+        margin-bottom: 6px;
         margin-left: 10px;
         margin-right: 10px;
         padding-left: 6px;
