@@ -2,9 +2,9 @@
 -- These functions all use the log level `DEBUG`. To be able to see them with
 -- `nvim-notify`, you need to set the minimum level in the nvim-notify config:
 -- `require("notify").setup { level = "2" }`.
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 local M = {}
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 
 function M.bufferInfo()
         local pseudoTilde  = "∼" -- HACK `U+223C` instead of real `~` to prevent md-strikethrough
@@ -135,6 +135,8 @@ function M.runFile()
         local filepath   = vim.api.nvim_buf_get_name(0)
         if vim.bo.filetype == "lua" and filepath:find("nvim") then
                 vim.cmd.source()
+        elseif vim.bo.filetype == "lua" and  vim.fn.finddir("love2d", nil, nil) then
+                vim.cmd("! love Game")
         elseif hasShebang then
                 vim.cmd("! chmod +x %")
                 vim.cmd("! %")
@@ -152,5 +154,5 @@ function M.runFile()
         end
 end
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 return M

@@ -196,7 +196,7 @@ map(n, "qO", function() require("functions.comment").addComment("above") end, { 
 map(nx, "K", vim.lsp.buf.hover, { desc = "󰏪 LSP Hover", silent = true })
 map(nx, "J", vim.lsp.buf.signature_help, { desc = "󰏪 LSP Signature", silent = true })
 -- map(nx, "<leader>f", function() require("functions.nano-plugins").formatWithFallback() end, { desc = "󱉯 Format", silent = true })
-map(nix, "<C-.>", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
+map(nix, ",a", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
 map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action() end,
         { desc = "Code Action", silent = true })
 
