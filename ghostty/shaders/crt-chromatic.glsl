@@ -19,7 +19,7 @@ const float COLOR_GLOW = 0.4; // Color bleeding intensity
 
 // Scanline Settings
 const float SCANLINE_INTENSITY = 1.0; // Overall intensity of scanlines
-const float SCANLINE_DENSITY = 0.15; // Density/thickness of scanlines
+const float SCANLINE_DENSITY = 0.3; // Density/thickness of scanlines
 
 // Dot Matrix Settings
 const float MASK_INTENSITY = 0.3; // Strength of the dot pattern
