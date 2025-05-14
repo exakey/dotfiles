@@ -34,19 +34,19 @@ return {
                         }
                 }
         },
-        {
+        { -- NODE ACTIONS
                 "ckolkey/ts-node-action",
                 dependencies = { "nvim-treesitter" },
                 -- config = function()
                 --     require("ts-node-action").setup({})
                 -- end
         },
-        {
+        { -- HYPRLANG
                 "theRealCarneiro/hyprland-vim-syntax",
                 dependencies = { "nvim-treesitter/nvim-treesitter" },
                 ft           = "hypr",
         },
-        {
+        { -- CONTEXT
                 "nvim-treesitter/nvim-treesitter-context",
                 dependencies = { "nvim-treesitter/nvim-treesitter" },
                 event        = "VeryLazy",
@@ -59,7 +59,7 @@ return {
                                 line_numbers        = true,
                                 multiline_threshold = 20,
                                 trim_scope          = "outer",
-                                mode                = "topline",
+                                mode                = "cursor",
                                 separator           = nil,
                                 zindex              = 20,
                                 on_attach           = nil,

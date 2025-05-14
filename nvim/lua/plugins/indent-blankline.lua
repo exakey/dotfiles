@@ -7,8 +7,8 @@ return {
         config = function()
                 require("ibl").setup({
                         indent     = {
-                                tab_char = require("core.icons").misc.dashed_bar,
-                                char     = require("core.icons").misc.dashed_bar,
+                                tab_char = " ",
+                                char     = " "
                         },
                         whitespace = {
                                 remove_blankline_trail = true,
