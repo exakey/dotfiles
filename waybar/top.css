@@ -29,8 +29,8 @@ window#waybar {
         color: @empty-fg;
         background-color: @main-bg;
         border-radius: 0px;
-        margin-top: -2px;
-        margin-bottom: -0px;
+        margin-top: 0px;
+        margin-bottom: -3px;
         margin-left: 0px;
         margin-right: 0px;
         padding: 0px;
@@ -46,8 +46,8 @@ window#waybar {
         color: @main-fg;
         background-color: @main-bg;
         border-radius: 0px;
-        margin-top: -2px;
-        margin-bottom: -0px;
+        margin-top: 0px;
+        margin-bottom: -3px;
         margin-left: 0px;
         margin-right: 0px;
         padding: 0px;
