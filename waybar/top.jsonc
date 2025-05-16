@@ -67,7 +67,6 @@
                 "margin-left": 40,
                 "margin-right": 40,
                 "modules-left": [
-                        "custom/updates",
                         "backlight#icon",
                         "backlight",
                         "custom/separators",
@@ -84,6 +83,8 @@
                 ],
                 "modules-right": [
                         "hyprland/submap",
+                        "custom/updates",
+                        "custom/separators",
                         "hyprland/language",
                         "custom/separators",
                         "custom/wifi",
@@ -144,8 +145,9 @@
                 },
                 "hyprland/language": {
                         "format": "{}",
-                        "format-en": "US",
-                        "format-ru": "RU",
+                        "format-en": "▉",
+                        // "format-ru": "▉",
+                        "format-ru": "󰝤",
                         "on-click": "$HOME/.local/share/bin/keyboardswitch.sh"
                 },
                 "cava": {
