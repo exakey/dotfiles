@@ -12,7 +12,7 @@ configuration {
 // Main //
 window {
     location:                    north;
-    y-offset:                    -8;
+    y-offset:                    -3;
     x-offset:                    0;
     width:                       23em;
     height:                      30em;

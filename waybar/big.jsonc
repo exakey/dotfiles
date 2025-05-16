@@ -1,5 +1,3 @@
-$HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarswitch.sh ht
-
 [
         {
                 "mod": "dock",
