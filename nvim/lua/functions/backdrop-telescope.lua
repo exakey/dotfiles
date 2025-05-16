@@ -1,4 +1,3 @@
--- CONFIG
 local blend = vim.g.backdrop
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -7,8 +6,6 @@ vim.api.nvim_create_autocmd("FileType", {
                 local backdropName    = "TelescopeBackdrop"
                 local telescopeBufnr  = ctx.buf
 
-                -- `Telescope` does not set a zindex, so it uses the default value
-                -- of `nvim_open_win`, which is 50: https://neovim.io/doc/user/api.html#nvim_open_win()
                 local telescopeZindex = 50
 
                 local backdropBufnr   = vim.api.nvim_create_buf(false, true)
@@ -20,7 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
                         height    = vim.o.lines,
                         focusable = false,
                         style     = "minimal",
-                        zindex    = telescopeZindex - 1, -- ensure it's below the reference window
+                        zindex    = telescopeZindex - 1,
                 })
 
                 vim.api.nvim_set_hl(0, backdropName, { bg = "#000000", default = true })
@@ -28,7 +25,6 @@ vim.api.nvim_create_autocmd("FileType", {
                 vim.wo[winnr].winblend        = blend
                 vim.bo[backdropBufnr].buftype = "nofile"
 
-                -- close backdrop when the reference buffer is closed
                 vim.api.nvim_create_autocmd({ "WinClosed", "BufLeave" }, {
                         once     = true,
                         buffer   = telescopeBufnr,

@@ -12,8 +12,6 @@ end
 
 --------------------------------------------------------------------------------
 
--- appends a horizontal line, with the language's comment syntax,
--- correctly indented and padded
 function M.commentHr()
         local comStr = getCommentstr()
         if not comStr then return end
@@ -64,8 +62,6 @@ function M.duplicateLineAsComment()
         vim.api.nvim_win_set_cursor(0, { lnum + 1, col })
 end
 
--- simplified implementation of neogen.nvim
--- (reason: lsp usually provides better prefills for docstrings)
 function M.docstring()
         vim.cmd.TSTextobjectGotoPreviousStart("@function.outer")
 

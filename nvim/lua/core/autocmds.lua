@@ -197,7 +197,7 @@ vim.api.nvim_create_autocmd("CursorMoved", {
         end,
 })
 
--- FIX for some reason `scrolloff` sometimes being set to `0` on new buffers
+-- FIX: for some reason `scrolloff` sometimes being set to `0` on new buffers
 local originalScrolloff = vim.o.scrolloff
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNew" }, {
         desc     = "User: FIX scrolloff on entering new buffer",

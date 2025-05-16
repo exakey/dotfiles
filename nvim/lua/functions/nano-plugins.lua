@@ -12,7 +12,7 @@ function M.startOrStopRecording(toggleKey, reg)
                 vim.cmd.normal { "q" .. reg, bang = true }
         else
                 vim.cmd.normal { "q", bang = true }
-                local macro = vim.fn.getreg(reg):sub(1, -(#toggleKey + 1)) -- as the key itself is recorded
+                local macro = vim.fn.getreg(reg):sub(1, -(#toggleKey + 1))
                 if macro ~= "" then
                         vim.fn.setreg(reg, macro)
                         local msg = vim.fn.keytrans(macro)
@@ -20,13 +20,6 @@ function M.startOrStopRecording(toggleKey, reg)
                 else
                         vim.notify("Aborted.", vim.log.levels.TRACE, { title = "Recording", icon = "󰜺" })
                 end
-        end
-        -- sound if on macOS
-        if jit.os == "OSX" then
-                local sound =
-                    "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/system/"
-                    .. (notRecording and "begin_record.caf" or "end_record.caf")
-                vim.system { "afplay", sound } -- async
         end
 end
 
@@ -133,8 +126,6 @@ function M.smartDuplicate()
                 if line:find("right:") then newLine = line:gsub("right:", "left:") end
                 if line:find("left:") then newLine = line:gsub("left:", "right:") end
                 line = newLine
-        elseif vim.bo.ft == "javascript" or vim.bo.ft == "typescript" then
-                line = line:gsub("^(%s*)if(.+{)$", "%1} else if%2")
         elseif vim.bo.ft == "lua" then
                 line = line:gsub("^(%s*)if( .* then)$", "%1elseif%2")
         elseif vim.bo.ft == "zsh" or vim.bo.ft == "bash" then

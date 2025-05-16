@@ -1,4 +1,4 @@
-local numbers = {
+local numbers                           = {
         text = {
                 [vim.diagnostic.severity.ERROR] = "",
                 [vim.diagnostic.severity.WARN]  = "",
@@ -15,7 +15,7 @@ local numbers = {
 }
 
 ---@diagnostic disable-next-line: unused-local
-local icons   = require("core.icons").diagnostics
+local icons                             = require("core.icons").diagnostics
 
 ------------------------------------------------------------------------------------------------------------------------
 -- HANDLERS

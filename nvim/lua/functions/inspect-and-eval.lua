@@ -1,13 +1,8 @@
--- INFO
--- These functions all use the log level `DEBUG`. To be able to see them with
--- `nvim-notify`, you need to set the minimum level in the nvim-notify config:
--- `require("notify").setup { level = "2" }`.
-------------------------------------------------------------------------------------------------------------------------
 local M = {}
 ------------------------------------------------------------------------------------------------------------------------
 
 function M.bufferInfo()
-        local pseudoTilde  = "∼" -- HACK `U+223C` instead of real `~` to prevent md-strikethrough
+        local pseudoTilde  = "∼"
 
         local clients      = vim.lsp.get_clients { bufnr = 0 }
         local longestName  = vim.iter(clients)
@@ -78,8 +73,6 @@ function M.nodeAtCursor()
         end
         vim.defer_fn(function() vim.api.nvim_buf_clear_namespace(0, ns, 0, -1) end, config.hlDuration)
 
-        -- FIX on_key being triggered by `n` key (only needed for my personal config)
-        -- see https://www.reddit.com/r/neovim/comments/1h051ht/comment/m01r7ju/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1
         vim.defer_fn(function()
                 local countNs = vim.api.nvim_create_namespace("searchCounter")
                 vim.api.nvim_buf_clear_namespace(0, countNs, 0, -1)
@@ -110,9 +103,6 @@ function M.lspCapabilities()
         end)
 end
 
--- compared to `:lua=`, this use `vim.ui.input` as proper input field with vim
--- motions and highlighting instead of the vim cmdline, and `vim.notify` for
--- nicer output
 function M.evalNvimLua()
         local function eval(input)
                 if not input or input == "" then return end
@@ -135,7 +125,7 @@ function M.runFile()
         local filepath   = vim.api.nvim_buf_get_name(0)
         if vim.bo.filetype == "lua" and filepath:find("nvim") then
                 vim.cmd.source()
-        elseif vim.bo.filetype == "lua" and  vim.fn.finddir("love2d", nil, nil) then
+        elseif vim.bo.filetype == "lua" and vim.fn.finddir("love2d", nil, nil) then
                 vim.cmd("! love Game")
         elseif hasShebang then
                 vim.cmd("! chmod +x %")

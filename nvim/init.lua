@@ -1,4 +1,4 @@
--- FIX broken `:Inspect` https://github.com/neovim/neovim/issues/31675
+-- FIX: broken `:Inspect` https://github.com/neovim/neovim/issues/31675
 -- can be removed on the version after 0.10.3
 
 vim.hl             = vim.highlight
@@ -43,7 +43,6 @@ safeRequire("core.autocmds")
 safeRequire("core.diagnostics")
 safeRequire("core.keymaps")
 safeRequire("core.yank-paste")
-safeRequire("core.highlights")
 safeRequire("functions.quickfix")
 safeRequire("core.backdrop-underline-fix")
 

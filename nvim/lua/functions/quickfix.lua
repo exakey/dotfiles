@@ -3,7 +3,6 @@ local M = {}
 
 function M.code_actions()
         local function apply_specific_code_action(res)
-                -- vim.notify(vim.inspect(res))
                 vim.lsp.buf.code_action({
                         filter = function(action)
                                 return action.title == res.title

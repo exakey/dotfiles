@@ -48,7 +48,7 @@ return {
                         ">",
                         ft   = { "lua" },
                         cond = function(fn)
-                                -- FIX https://github.com/altermo/ultimate-autopair.nvim/issues/88
+                                -- FIX: https://github.com/altermo/ultimate-autopair.nvim/issues/88
                                 local inLuaLua = vim.endswith(vim.api.nvim_buf_get_name(0), "/ftplugin/lua.lua")
                                 return not inLuaLua and fn.in_string()
                         end,

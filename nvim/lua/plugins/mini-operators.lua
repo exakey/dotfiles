@@ -53,7 +53,7 @@ return {
                                 end
 
                                 -- MOVE CURSOR TO VALUE
-                                -- HACK needs to work with `defer_fn`, since the transformer function is
+                                -- HACK: needs to work with `defer_fn`, since the transformer function is
                                 -- called only *before* multiplication
                                 local rowBefore = vim.api.nvim_win_get_cursor(0)[1]
                                 vim.defer_fn(function()

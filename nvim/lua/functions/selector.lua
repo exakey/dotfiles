@@ -1,7 +1,3 @@
--- INFO
--- simple UI for `vim.ui.select`
---------------------------------------------------------------------------------
-
 local config     = {
         win               = {
                 relative         = "cursor",
@@ -71,7 +67,6 @@ local function telescopeRedirect(items, opts, on_choice)
                 return
         end
 
-        -- DOCS https://github.com/nvim-telescope/telescope.nvim/blob/master/developers.md#first-picker
         local pickers     = require("telescope.pickers")
         local finders     = require("telescope.finders")
         local conf        = require("telescope.config").values
@@ -96,7 +91,7 @@ local function telescopeRedirect(items, opts, on_choice)
                                     local selection = actionState.get_selected_entry()
                                     on_choice(selection.value, selection.index)
                             end)
-                            return true -- `true`  = keep other mappings from the user
+                            return true
                     end,
             })
             :find()
@@ -117,7 +112,7 @@ function M.selector(items, opts, on_choice)
         assert(type(on_choice) == "function", "`on_choice` must be a function.")
         local defaultOpts = { format_item = function(i) return i end, prompt = "Select", kind = "" }
         opts              = vim.tbl_deep_extend("force", defaultOpts, opts) ---@type SelectorOpts
-        opts.prompt       = opts.prompt:gsub(":%s*$", "") -- trim trailing `:` from prmpt
+        opts.prompt       = opts.prompt:gsub(":%s*$", "")
 
         if opts.kind == "codeaction" then
                 opts.prompt      = vim.trim(config.codeaction.icon .. " " .. opts.prompt)
@@ -188,7 +183,7 @@ function M.selector(items, opts, on_choice)
                 notify(out, "debug", { title = "Inspect", ft = "lua" })
         end)
         map(config.keymaps.confirm, function()
-                local ln = lnum() -- needs to be saved before deleting buffersele
+                local ln = lnum()
                 vim.cmd.bwipeout()
                 on_choice(items[ln], ln)
         end)
@@ -200,7 +195,7 @@ function M.selector(items, opts, on_choice)
                         local curWin = vim.api.nvim_get_current_win()
                         if curWin == winid then
                                 vim.api.nvim_buf_delete(bufnr, { force = true })
-                                return true -- deletes this autocmd
+                                return true
                         end
                 end,
         })

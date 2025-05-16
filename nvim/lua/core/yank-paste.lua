@@ -23,7 +23,7 @@ do
         map("n", "Y", function()
                 cursorBefore = vim.api.nvim_win_get_cursor(0)
                 return "y$"
-        end, { expr = true, unique = false }) -- `unique`, since it's a nvim-builtin
+        end, { expr = true, unique = false })
 
         vim.api.nvim_create_autocmd("TextYankPost", {
                 desc = "User: Sticky yank/delete",

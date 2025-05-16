@@ -30,7 +30,7 @@ return {
                                 workspaceWord  = true,      -- already done by completion plugin
                                 postfix        = "@",       -- useful for `table.insert` and the like
                         },
-                        -- FIX https://github.com/sumneko/lua-language-server/issues/679#issuecomment-925524834
+                        -- FIX: https://github.com/sumneko/lua-language-server/issues/679#issuecomment-925524834
                         workspace   = {
                                 checkThirdParty = false,
                                 library         = {

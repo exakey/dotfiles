@@ -1,5 +1,4 @@
--- CONFIG
-local blend = 40
+local blend = vim.g.backdrop
 
 vim.api.nvim_create_autocmd("FileType", {
         pattern  = "mason",
@@ -24,9 +23,7 @@ vim.api.nvim_create_autocmd("FileType", {
                 vim.wo[winnr].winhighlight     = "Normal:" .. backdropName
                 vim.wo[winnr].winblend         = blend
                 vim.bo[backdropBufnr].buftype  = "nofile"
-                -- vim.bo[backdropBufnr].filetype = "mason_backdrop"
 
-                -- close backdrop when the reference buffer is closed
                 vim.api.nvim_create_autocmd({ "WinClosed", "BufLeave" }, {
                         once     = true,
                         buffer   = masonBufnr,

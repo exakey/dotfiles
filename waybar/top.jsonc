@@ -102,7 +102,6 @@
                         "return-type": "json",
                         "format": "{}",
                         "rotate": 0,
-                        "on-click": "hyprctl dispatch exec '$HOME/.local/share/bin/systemupdate.sh up'",
                         "interval": 43200,
                         "tooltip": true,
                         "signal": 20

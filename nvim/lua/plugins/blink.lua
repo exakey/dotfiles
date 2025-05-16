@@ -123,7 +123,7 @@ return {
                                         return { "snippets", "lsp", "path", "ripgrep", "nerdfont" }
                                 elseif vim.bo.filetype == "c" or "cpp" then
                                         return { "snippets", "lsp", "path", "buffer", "ripgrep", "env" }
-                                elseif vim.bo.filetype == "css" then
+                                elseif vim.bo.filetype == "css" or "jsonc" or "json" then
                                         return { "snippets", "css-vars", "lsp", "path", "buffer", "ripgrep", "nerdfont" }
                                 elseif success and node and vim.tbl_contains({ "comment", "line_comment", "block_comment" }, node:type()) then
                                         return { "buffer", "ripgrep" }

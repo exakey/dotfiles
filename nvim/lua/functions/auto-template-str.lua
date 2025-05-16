@@ -90,10 +90,10 @@ function M.insertTemplateStr()
         end
 
         local availableFiletypes = {
-                c          = cStr,
-                cpp        = cStr,
-                lua        = luaStr,
-                python     = pyStr,
+                c      = cStr,
+                cpp    = cStr,
+                lua    = luaStr,
+                python = pyStr,
         }
         local updateFunc = availableFiletypes[vim.bo.filetype]
         if not updateFunc then

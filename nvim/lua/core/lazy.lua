@@ -119,7 +119,7 @@ local pluginTypeIcons = {
 -- GOTO PLUGIN SPEC
 -- For nicer selection via `vim.ui.select`: telescope-ui-select OR dressing.nvim
 
-keymap("n", "g,", function()
+keymap("n", "<leader><leader>,", function()
         vim.api.nvim_create_autocmd("FileType", {
                 desc     = "User (once): Colorize icons in `TelescopeResults`",
                 once     = true,
@@ -158,7 +158,7 @@ end, { desc = "󰒲 Goto Plugin Config" })
 -- GOTO LOCAL PLUGIN CODE
 -- REQUIRED telescope.nvim AND (telescope-ui-select OR dressing.nvim)
 
-keymap("n", "gp", function()
+keymap("n", "<leader><leader>p", function()
         vim.ui.select(
                 require("lazy").plugins(),
                 { prompt = "󰒲 Local Code", format_item = function(plugin) return plugin.name end },
