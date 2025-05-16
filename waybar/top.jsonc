@@ -1,10 +1,11 @@
 [
         {
+                "name": "workspaces",
                 "mod": "dock",
                 "layer": "top",
                 "position": "top",
                 "margin-top": 10,
-                "margin-bottom": -4,
+                "margin-bottom": -7,
                 "height": 1,
                 "fixed-center": true,
                 "exclusive": true,
@@ -14,6 +15,7 @@
                 "margin-left": 40,
                 "margin-right": 40,
                 "modules-center": ["hyprland/workspaces", ""],
+                // "modules-right": ["hyprland/workspaces", ""],
                 "hyprland/workspaces": {
                         "rotate": 0,
                         "all-outputs": true,
@@ -51,6 +53,7 @@
         },
         {
                 "mod": "dock",
+                "name": "main",
                 "layer": "top",
                 "position": "top",
                 "margin-top": 0,
@@ -64,6 +67,7 @@
                 "margin-left": 40,
                 "margin-right": 40,
                 "modules-left": [
+                        "custom/updates",
                         "backlight#icon",
                         "backlight",
                         "custom/separators",
@@ -75,7 +79,6 @@
                 ],
                 "modules-center": [
                         "clock",
-                        "custom/updates",
                         // "hyprland/workspaces",
                         ""
                 ],
