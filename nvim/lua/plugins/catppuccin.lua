@@ -1,4 +1,5 @@
 local ivory     = "#dce0e8"
+local spark     = "#add8e6"
 
 local customCol = function(colors)
         return {
@@ -462,6 +463,7 @@ local customCol = function(colors)
                 MiniFilesDirectory               = { link = "Function" },
                 MiniFilesFile                    = { link = "NonText" },
                 MiniFilesCursorLine              = { link = "Visual" },
+                LightBulbSign                    = { fg = spark }
 
         }
 end

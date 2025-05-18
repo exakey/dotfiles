@@ -30,7 +30,7 @@ br - border
 @define-color norm                  #cdd6f4;
 @define-color warning               #f2cdcd;
 @define-color critical              #f38ba8;
-@define-color charging              #a6e3a1;
+@define-color charging              #add8e6;
 
 @define-color min                   #313244;
 @define-color midl                  #585b70;

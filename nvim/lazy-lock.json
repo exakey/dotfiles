@@ -10,6 +10,7 @@
   "catppuccin": { "branch": "main", "commit": "1bf070129c0b6f77cc23f6a2212dcdc868308c52" },
   "cmp-go-deep": { "branch": "master", "commit": "2aebe9a398069e76ca9238f8d3de47424467c449" },
   "codecompanion.nvim": { "branch": "main", "commit": "9654cb31f10c9eda3e777d03d32b29df606ab0fe" },
+  "color-converter.nvim": { "branch": "main", "commit": "5888e92cbccf0de202d2b617f6a8f3011a43bd52" },
   "conform.nvim": { "branch": "master", "commit": "2b2b30260203af3b93a7470ac6c8457ddd6e32d9" },
   "css-vars.nvim": { "branch": "main", "commit": "0615782c320f729b04d9c51a8a61fb498ee4234a" },
   "dial.nvim": { "branch": "master", "commit": "2c7e2750372918f072a20f3cf754d845e143d7c9" },

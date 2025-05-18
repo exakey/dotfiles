@@ -77,15 +77,21 @@
                         ""
                 ],
                 "modules-center": [
-                        "clock",
+                        // "clock",
+                        "hyprland/submap",
+                        "custom/separators",
+                        "hyprland/language",
+                        "custom/separators",
+                        "custom/updates",
                         // "hyprland/workspaces",
                         ""
                 ],
                 "modules-right": [
-                        "hyprland/submap",
-                        "custom/updates",
-                        "custom/separators",
-                        "hyprland/language",
+                        // "hyprland/submap",
+                        // "custom/separators",
+                        // "custom/updates",
+                        // "custom/separators",
+                        // "hyprland/language",
                         "custom/separators",
                         "custom/wifi",
                         "network",
@@ -145,9 +151,9 @@
                 },
                 "hyprland/language": {
                         "format": "{}",
-                        "format-en": "▉",
+                        "format-en": "█",
                         // "format-ru": "▉",
-                        "format-ru": "󰝤",
+                        "format-ru": "▄",
                         "on-click": "$HOME/.local/share/bin/keyboardswitch.sh"
                 },
                 "cava": {
@@ -286,7 +292,7 @@
                         "max-length": 6
                 },
                 "hyprland/submap": {
-                        "format": "{}",
+                        "format": "█",
                         "max-length": 8,
                         "tooltip": false
                 },

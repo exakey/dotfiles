@@ -6,14 +6,14 @@ return {
         config = function()
                 local function h(name) return vim.api.nvim_get_hl(0, { name = name }) end
 
-                vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Normal").bg, bg = h("DiagnosticError").fg })
-                vim.api.nvim_set_hl(0, "SymbolUsageRefRound", { fg = h("DiagnosticError").fg })
+                vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Normal").bg, bg = "#ff6666" })
+                vim.api.nvim_set_hl(0, "SymbolUsageRefRound", { fg = "#ff6666" })
 
-                vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Normal").bg, bg = h("@keyword").fg })
-                vim.api.nvim_set_hl(0, "SymbolUsageDefRound", { fg = h("@keyword").fg })
+                vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Normal").bg, bg = "#add8e6" })
+                vim.api.nvim_set_hl(0, "SymbolUsageDefRound", { fg = "#add8e6" })
 
-                vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("Normal").bg, bg = h("Function").fg })
-                vim.api.nvim_set_hl(0, "SymbolUsageImplRound", { fg = h("Function").fg })
+                vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("Normal").bg, bg = "#f9e2af" })
+                vim.api.nvim_set_hl(0, "SymbolUsageImplRound", { fg = "#f9e2af" })
 
                 local function box(symbol)
                         local res = {}

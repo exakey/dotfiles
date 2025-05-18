@@ -22,9 +22,12 @@
 }
 
 #custom-updates {
-        /* font-size: 12px; */
-        color: @yellow;
+        color: #add8e6;
+        /* background: #29313e; */
         background: @main-bg;
+        margin-left: -1px;
+        margin-top: 9px;
+        margin-bottom: 10px;
 }
 
 #workspaces button.empty {
@@ -78,18 +81,17 @@
 }
 
 #language {
-        /* color: @blue; */
-        background: @main-bg;
-        margin-left: 0px;
-        margin-top: 6px;
-        margin-bottom: 6px;
+        color: @yellow;
+        background: #33313a;
+        margin-top: 9px;
+        margin-bottom: 10px;
 }
 
 #submap {
-        color: @module-fg;
-        background: @main-bg;
-        margin-left: 8px;
-        margin-right: 8px;
+        color: @red;
+        background: #32283a;
+        margin-top: 9px;
+        margin-bottom: 10px;
 }
 
 #cava {
@@ -103,7 +105,7 @@
 
 #custom-media {
         color: @main-fg;
-        background-color: @media;
+        background-color: @main-bg;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-left: 8px;

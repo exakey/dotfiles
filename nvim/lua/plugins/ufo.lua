@@ -87,7 +87,7 @@ return {
                 end,
                 -- show folds with number of folded lines instead of just the icon
                 fold_virt_text_handler  = function(virtText, lnum, endLnum, width, truncate)
-                        local hlgroup     = "Comment"
+                        local hlgroup     = "Error"
                         local icon        = ""
                         local newVirtText = {}
                         local suffix      = ("  %s %d"):format(icon, endLnum - lnum)
