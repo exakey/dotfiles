@@ -5,36 +5,36 @@ modmap:
       CapsLock:
         held: leftctrl
         alone: esc
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       a:
         held: Win_L
         alone: a
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       s:
         held: Alt_L
         alone: s
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       d:
         held: Shift_L
         alone: d
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       f:
         held: Ctrl_L
         alone: f
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       h:
         held: Ctrl_L
         alone: h
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       j:
         held: Shift_L
         alone: j
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       k:
         held: Alt_L
         alone: k
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
       l:
         held: Win_L
         alone: l
-        alone_timeout_millis: 100
+        alone_timeout_millis: 200
