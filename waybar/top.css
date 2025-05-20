@@ -272,12 +272,12 @@
 }
 
 #cpu.icon.warning {
-        color: @blank-fg;
+        color: @warningTr;
         background: @warning;
 }
 
 #cpu.icon.critical {
-        color: @blank-fg;
+        color: @criticalTr;
         background: @critical;
 }
 
@@ -300,12 +300,12 @@
 
 #cpu.warning {
         color: @warning;
-        background: @media;
+        background: @warningTr;
 }
 
 #cpu.critical {
         color: @critical;
-        background: @media;
+        background: @criticalTr;
 }
 
 #custom-cpuinfo.icon {
@@ -376,12 +376,12 @@
 }
 
 #memory.icon.warning {
-        color: @blank-fg;
+        color: @warningTr;
         background: @warning;
 }
 
 #memory.icon.critical {
-        color: @blank-fg;
+        color: @criticalTr;
         background: @critical;
 }
 
@@ -404,12 +404,12 @@
 
 #memory.warning {
         color: @warning;
-        background: @media;
+        background: @warningTr;
 }
 
 #memory.critical {
         color: @critical;
-        background: @media;
+        background: @criticalTr;
 }
 
 #battery.icon {
@@ -425,27 +425,27 @@
 }
 
 #battery.icon.full {
-        color: @blank-fg;
+        color: @fullTr;
         background: @full;
 }
 
 #battery.icon.good {
-        color: @blank-fg;
+        color: @goodTr;
         background: @good;
 }
 
 #battery.icon.warning {
-        color: @blank-fg;
+        color: @warningTr;
         background: @warning;
 }
 
 #battery.icon.critical {
-        color: @blank-fg;
+        color: @criticalTr;
         background: @critical;
 }
 
 #battery.icon.charging {
-        color: @blank-fg;
+        color: @chargingTr;
         background: @charging;
 }
 
@@ -463,25 +463,25 @@
 
 #battery.full {
         color: @full;
-        background: @media;
+        background: @fullTr;
 }
 
 #battery.good {
         color: @good;
-        background: @media;
+        background: @goodTr;
 }
 
 #battery.warning {
         color: @warning;
-        background: @media;
+        background: @warningTr;
 }
 
 #battery.critical {
         color: @critical;
-        background: @media;
+        background: @criticalTr;
 }
 
 #battery.charging {
         color: @charging;
-        background: @media;
+        background: @chargingTr;
 }

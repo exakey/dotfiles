@@ -73,7 +73,7 @@ local devicons = {
 
 return {
         "Bekaboo/dropbar.nvim",
-        enabled      = false,
+        -- enabled      = false,
         lazy         = false,
         dependencies = { "nvim-telescope/telescope-fzf-native.nvim" },
         keys         = { { ",q", function() require("dropbar.api").pick() end, desc = "Toggle dropbar", mode = { "n" } } },

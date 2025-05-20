@@ -41,4 +41,4 @@ modmap:
       # KEY_APOSTROPHE: { set_mode: numbers }
       # w: 1
       # e: 2
-      # r: 3
+      # r: 2
