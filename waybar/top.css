@@ -25,7 +25,6 @@
         color: #add8e6;
         /* background: #29313e; */
         background: @main-bg;
-        margin-left: -1px;
         margin-top: 9px;
         margin-bottom: 10px;
 }
@@ -81,15 +80,17 @@
 }
 
 #language {
-        color: @yellow;
-        background: #33313a;
+        color: #add8e6;
+        /* background: #33313a; */
+        padding-right: 8px;
         margin-top: 9px;
         margin-bottom: 10px;
 }
 
 #submap {
-        color: @red;
-        background: #32283a;
+        color: #add8e6;
+        /* background: #32283a; */
+        padding-right: 8px;
         margin-top: 9px;
         margin-bottom: 10px;
 }

@@ -81,6 +81,7 @@ local customCol = function(colors)
                 Type                             = { link = "Keyword" },
                 -- Underlined                    = { fg = colors., underline = true },
                 VertSplit                        = { link = "NonText" },
+                -- Visual                           = { fg = colors.none, bg = colors.none, bold = true },
                 Visual                           = { fg = colors.none, bg = colors.none, bold = true },
                 -- VisualNOS                     = { fg = colors.},
                 WarningMsg                       = { fg = colors.yellow },
@@ -209,14 +210,15 @@ local customCol = function(colors)
                 BlinkCmpKindValue                = { link = "@lsp.type.enumMember" },
                 BlinkCmpKindVariable             = { link = "@lsp.type.type" },
                 BlinkCmpAbbrDeprecated           = { link = "DiagnosticDeprecated" },
-                BlinkCmpLabelDescription         = { link = "NonText" },
-                BlinkCmpLabelDetail              = { link = "NonText" },
+                BlinkCmpLabelDescription         = { link = "Comment" },
+                BlinkCmpLabelDetail              = { link = "Comment" },
                 BlinkCmpLabelMatch               = { link = "Visual" },
                 BlinkCmpMenuBorder               = { fg = colors.crust, bg = colors.crust },
                 BlinkCmpDocBorder                = { fg = colors.crust, bg = colors.crust },
-                BlinkCmpMenu                     = { link = "Normal" },
+                -- BlinkCmpMenu                     = { link = "Normal" },
+                BlinkCmpMenu                     = { bg = "#13131E" },
                 BlinkCmpMenuSelection            = { link = "Visual" },
-                BlinkCmpSource                   = { link = "LineNr" },
+                BlinkCmpSource                   = { link = "NonText" },
 
                 --------------------------------------------------------------------------------------------------------
                 -- DROPBAR

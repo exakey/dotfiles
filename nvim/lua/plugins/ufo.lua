@@ -87,10 +87,10 @@ return {
                 end,
                 -- show folds with number of folded lines instead of just the icon
                 fold_virt_text_handler  = function(virtText, lnum, endLnum, width, truncate)
-                        local hlgroup     = "Error"
+                        local hlgroup     = "TinyInlineDiagnosticVirtualTextError"
                         local icon        = ""
                         local newVirtText = {}
-                        local suffix      = ("  %s %d"):format(icon, endLnum - lnum)
+                        local suffix      = (" %s %d "):format(icon, endLnum - lnum)
                         local sufWidth    = vim.fn.strdisplaywidth(suffix)
                         local targetWidth = width - sufWidth
                         local curWidth    = 0

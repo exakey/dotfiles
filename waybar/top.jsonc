@@ -79,9 +79,9 @@
                 "modules-center": [
                         // "clock",
                         "hyprland/submap",
-                        "custom/separators",
+                        // "custom/separators",
                         "hyprland/language",
-                        "custom/separators",
+                        // "custom/separators",
                         "custom/updates",
                         // "hyprland/workspaces",
                         ""
