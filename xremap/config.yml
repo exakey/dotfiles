@@ -38,3 +38,4 @@ modmap:
         held: Win_L
         alone: l
         alone_timeout_millis: 200
+      # KEY_APOSTROPHE: { set_mode: numbers }
