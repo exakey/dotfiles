@@ -6,22 +6,22 @@ modmap:
         held: leftctrl
         alone: esc
         alone_timeout_millis: 300
-      a:
-        held: Win_L
-        alone: a
-        alone_timeout_millis: 300
-      s:
-        held: Alt_L
-        alone: s
-        alone_timeout_millis: 300
-      d:
-        held: Shift_L
-        alone: d
-        alone_timeout_millis: 300
-      f:
-        held: Ctrl_L
-        alone: f
-        alone_timeout_millis: 300
+      # a:
+      #   held: Win_L
+      #   alone: a
+      #   alone_timeout_millis: 300
+      # s:
+      #   held: Alt_L
+      #   alone: s
+      #   alone_timeout_millis: 300
+      # d:
+      #   held: Shift_L
+      #   alone: d
+      #   alone_timeout_millis: 300
+      # f:
+      #   held: Ctrl_L
+      #   alone: f
+      #   alone_timeout_millis: 300
       # h:
       #   held: Ctrl_L
       #   alone: h
