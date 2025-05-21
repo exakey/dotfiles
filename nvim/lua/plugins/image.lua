@@ -6,7 +6,7 @@ return {
         },
         {
                 "3rd/image.nvim",
-                enabled      = false,
+                enabled      = true,
                 event        = "VeryLazy",
                 dependencies = { "luarocks.nvim" },
                 config       = function()
@@ -19,7 +19,7 @@ return {
                                                 clear_in_insert_mode        = true,
                                                 download_remote_images      = true,
                                                 only_render_image_at_cursor = vim.g.neovim_mode == "skitty" and false or
-                                                true,
+                                                    true,
                                                 filetypes                   = { "markdown", "vimwiki", "html" },
                                         },
                                         neorg    = {

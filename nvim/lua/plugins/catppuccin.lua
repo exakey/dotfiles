@@ -465,7 +465,7 @@ local customCol = function(colors)
                 MiniFilesDirectory               = { link = "Function" },
                 MiniFilesFile                    = { link = "NonText" },
                 MiniFilesCursorLine              = { link = "Visual" },
-                LightBulbSign                    = { fg = spark }
+                LightBulbSign                    = { fg = spark },
 
         }
 end
