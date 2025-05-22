@@ -36,7 +36,6 @@ return {
                         break_line                   = { enabled = false, after = 30 },
                         virt_texts                   = { priority = 99 },
                         format                       = function(diagnostic)
-                                -- return diagnostic.message .. " [" .. diagnostic.source .. "]"
                                 local special_sources = {
                                         ["Lua Diagnostics."]  = "lua",
                                         ["Lua Syntax Check."] = "lua",
@@ -44,6 +43,11 @@ return {
 
                                 local message         = icons[vim.diagnostic.severity[diagnostic.severity]]
                                 if diagnostic.source then
+                                        -- vim.api.nvim_create_autocmd("CursorHold", {
+                                        --         callback = function()
+                                        --                 vim.diagnostic.open_float(nil, { focusable = false })
+                                        --         end
+                                        -- })
                                         message = string.format("%s %s", message,
                                                 special_sources[diagnostic.source] or diagnostic
                                                 .source)
