@@ -49,8 +49,7 @@ return {
                                         --         end
                                         -- })
                                         message = string.format("%s %s", message,
-                                                special_sources[diagnostic.source] or diagnostic
-                                                .source)
+                                                special_sources[diagnostic.source] or diagnostic.source)
                                 end
                                 if diagnostic.code then
                                         message = string.format("%s [%s]", message, diagnostic.code)

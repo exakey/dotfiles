@@ -36,9 +36,9 @@ end
 return {
         "mfussenegger/nvim-dap",
         keys   = {
-                { "<f5>", function() require("dap").toggle_breakpoint() end, desc = " Toggle breakpoint" },
-                { "<f6>", function() require("dap").step_over() end, desc = " Step over" },
-                { "<f7>", function() require("dap").continue() end, desc = " Continue" },
+                { "<f9>", function() require("dap").toggle_breakpoint() end, desc = " Toggle breakpoint" },
+                { "<f11>", function() require("dap").step_over() end, desc = " Step over" },
+                { "<f12>", function() require("dap").continue() end, desc = " Continue" },
 
                 { "]b", function() gotoBreakpoint("next") end, desc = " Goto next breakpoint" },
                 { "[b", function() gotoBreakpoint("prev") end, desc = " Goto previous breakpoint" },

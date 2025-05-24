@@ -3,10 +3,10 @@ return {
         dependencies = { "nvim-neotest/nvim-nio", "mfussenegger/nvim-dap" },
         keys         = {
                 -- { "<f8>", function() require("dap-view").toggle() end, desc = "󱂬 Toggle UI" },
-                { "<f8>", function() require("dapui").toggle() end, desc = "󱂬 Toggle UI" },
+                { "<f10>", function() require("dapui").toggle() end, desc = "󱂬 Toggle UI" },
                 {
                         "<leader>db",
-                        function() require("dapui").float_element("breakpoints", { enter = true }) end, ---@diagnostic disable-line: missing-fields
+                        function() require("dapui").float_element("breakpoints", { enter = true }) end,
                         desc = " List breakpoints",
                 },
                 {
