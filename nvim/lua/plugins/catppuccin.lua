@@ -22,7 +22,7 @@ local customCol = function(colors)
                 CursorLine                       = { bg = colors.none },
                 CursorLineNr                     = { fg = colors.flamingo },
                 Define                           = { fg = colors.pink },
-                DiagnosticError                  = { bg = colors.crust },
+                DiagnosticError                  = { fg = colors.text, bg = colors.crust },
                 DiagnosticInfo                   = { bg = colors.crust },
                 DiagnosticWarn                   = { bg = colors.crust },
                 Directory                        = { fg = ivory },
@@ -456,6 +456,8 @@ local customCol = function(colors)
                 --------------------------------------------------------------------------------------------------------
                 -- MISC
 
+                IBLScope                         = { fg = ivory },
+                SnacksIndentScope                = { fg = ivory },
                 LspInlayHint                     = { fg = colors.surface2, bg = colors.base },
                 OutlineCurrent                   = { link = "Visual" },
                 OutlineDetails                   = { link = "NonText" },

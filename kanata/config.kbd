@@ -130,19 +130,19 @@
         g bspc
         spc ret
 
-        q '
+        q S-'
         w S-9
         e S-0
-        r S-'
+        r '
 
         a [
         s S-[
         d S-]
         f ]
 
-        z ,
-        x S-,
-        c S-.
+        z S-,
+        x S-.
+        c ,
         v .
 )
 
@@ -162,9 +162,9 @@
         l S-8
 
         n -
-        m S-min
+        m +
         , =
-        . +
+        . S-min
 )
 
 (deflayermap (mouse)
@@ -174,6 +174,7 @@
         i mrgt
         w mlft
         e mrgt
+        g mmtp
 
         q (mwheel-down 100 120)
         r (mwheel-up   100 120)

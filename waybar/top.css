@@ -151,13 +151,13 @@
 }
 
 #backlight.icon.max {
-        color: @min;
+        color: @normTr;
         background: @max;
 }
 
 #backlight {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         /*margin-right: 10px;*/
@@ -214,13 +214,13 @@
 }
 
 #pulseaudio.icon.max {
-        color: @min;
+        color: @normTr;
         background: @max;
 }
 
 #pulseaudio {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -231,8 +231,8 @@
 }
 
 #custom-wifi {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @normTr;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -244,7 +244,7 @@
 
 #network {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 10px;
@@ -255,8 +255,8 @@
 }
 
 #cpu.icon {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @normTr;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -267,8 +267,8 @@
 }
 
 #cpu.icon.norm {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @normTr;
+        background: @norm;
 }
 
 #cpu.icon.warning {
@@ -283,7 +283,7 @@
 
 #cpu {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 10px;
@@ -294,8 +294,8 @@
 }
 
 #cpu.norm {
-        color: @main-fg;
-        background: @media;
+        color: @norm;
+        background: @normTr;
 }
 
 #cpu.warning {
@@ -309,8 +309,8 @@
 }
 
 #custom-cpuinfo.icon {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @normTr;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -322,7 +322,7 @@
 
 #custom-cpuinfo {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 10px;
@@ -333,8 +333,8 @@
 }
 
 #custom-gpuinfo.icon {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @normTr;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -346,7 +346,7 @@
 
 #custom-gpuinfo {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 10px;
@@ -357,8 +357,8 @@
 }
 
 #memory.icon {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @normTr;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -371,8 +371,8 @@
 }
 
 #memory.icon.norm {
-        color: @blank-fg;
-        background: @main-fg;
+        color: @norm;
+        background: @normTr;
 }
 
 #memory.icon.warning {
@@ -387,7 +387,7 @@
 
 #memory {
         color: @main-fg;
-        background: @media;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 10px;
@@ -399,7 +399,7 @@
 
 #memory.norm {
         color: @norm;
-        background: @media;
+        background: @normTr;
 }
 
 #memory.warning {

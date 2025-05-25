@@ -163,10 +163,10 @@ return {
                 styles    = {
                         notification_history = { border = vim.g.borderStyleNone, height = 0.9, width = 0.9 },
                         input                = {
-                                backdrop  = true,
-                                border    = vim.g.borderStyle,
-                                row       = math.ceil(vim.o.lines / 2) - 8,
-                                wo        = {
+                                backdrop = true,
+                                border   = vim.g.borderStyle,
+                                row      = math.ceil(vim.o.lines / 2) - 8,
+                                wo       = {
                                         cursorline   = false,
                                         winhighlight =
                                         "NormalFloat:SnacksInputNormal,FloatBorder:SnacksInputBorder,FloatTitle:SnacksInputTitle",
@@ -186,6 +186,18 @@ return {
                                 height   = 0.6,
                                 border   = vim.g.borderStyle,
                                 title    = " 󰆽 Git blame ",
+                        },
+                },
+                indent    = {
+                        animate = { enabled = false },
+                        char    = { vertical = require("core.icons").misc.vertical_bar },
+                        indent  = { enabled = false },
+                        scope   = {
+                                enabled      = false,
+                                char         = require("core.icons").misc.vertical_bar,
+                                underline    = true,
+                                only_current = true,
+                                hl           = "SnacksIndentScope",
                         },
                 },
                 notifier  = {

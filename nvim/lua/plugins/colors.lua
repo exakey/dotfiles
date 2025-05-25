@@ -18,6 +18,7 @@ return {
                         enable_tailwind         = true,
                         custom_colors           = {
                                 { label = "ivory",            color = "#dce0e8" },
+                                { label = "spark",            color = "#add8e6" },
                                 { label = "colors.ivory",     color = "#dce0e8" },
                                 { label = "colors.rosewater", color = "#f5e0dc" },
                                 { label = "colors.flamingo",  color = "#f2cdcd" },
