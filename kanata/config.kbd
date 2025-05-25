@@ -8,8 +8,26 @@
 )
 
 (defsrc
-        esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  ins   prnt del  home end  prev next
+        esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  ins  prnt del home end prev next
         grv  1    2    3    4    5    6    7    8    9    0     -     =    bspc
+        tab  q    w    e    r    t    y    u    i    o    p     [     ]    \
+        caps a    s    d    f    g    h    j    k    l    ;     '     ret
+        lsft z    x    c    v    b    n    m    ,    .    /     rsft
+        lctl lmet lalt           spc            ralt rctl
+)
+
+(deflayer default
+        @esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  @ins  prnt @del home end prev next
+        grv  1    2    3    4    5    6    7    8    9    0     -     =    bspc
+        tab  @q    w    @e    r    t    y    u    i    @o    @p     [     ]    \
+        @caps @a    @s    @d    @f    g    @h    @j    @k    @l    ;     '     ret
+        lsft z    x    c    v    b    @n    @m    ,    .    /     rsft
+        lctl lmet lalt           @spc            ralt rctl
+)
+
+(deflayer normal
+        esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  ins  prnt del home end prev next
+        @grv  1    2    3    4    5    6    7    8    9    0     -     =    bspc
         tab  q    w    e    r    t    y    u    i    o    p     [     ]    \
         caps a    s    d    f    g    h    j    k    l    ;     '     ret
         lsft z    x    c    v    b    n    m    ,    .    /     rsft
@@ -24,7 +42,9 @@
         ht $hold-timeout
 )
 
-(deflayermap (default)
+(defalias
+        ins  (layer-switch normal)
+        grv  (layer-switch default)
         del  lrld
         esc  caps
         caps (tap-hold-release $tt $ht esc lctl)
@@ -38,13 +58,14 @@
         k    (tap-hold-release $tt $ht k rmet)
         l    (tap-hold-release $tt $ht l ralt)
 
+        spc  (tap-hold-release $tt $ht spc (layer-while-held mouse))
+
         n    (tap-hold-release $tt $ht n   (layer-while-held numbers))
         m    (tap-hold-release $tt $ht m   (layer-while-held fuckeys))
         p    (tap-hold-release $tt $ht p   (layer-while-held player))
         e    (tap-hold-release $tt $ht e   (layer-while-held hjkl))
         o    (tap-hold-release $tt $ht o   (layer-while-held symbols-left))
         q    (tap-hold-release $tt $ht q   (layer-while-held symbols-right))
-        spc  (tap-hold-release $tt $ht spc (layer-while-held mouse))
 )
 
 (deflayermap (numbers)
