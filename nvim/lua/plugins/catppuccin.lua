@@ -1,6 +1,37 @@
 local ivory     = "#dce0e8"
 local spark     = "#add8e6"
 
+local noita     = {
+        mocha = {
+                -- rosewater = "#",
+                -- flamingo  = "#",
+                -- pink      = "#",
+                -- mauve     = "#",
+                red       = "#cb341b",
+                maroon    = "#d17678",
+                -- peach     = "#",
+                -- yellow    = "#",
+                -- green     = "#",
+                -- teal      = "#",
+                -- sky       = "#",
+                -- sapphire  = "#",
+                -- blue      = "#",
+                -- lavender  = "#",
+                -- text      = "#",
+                -- subtext1  = "#",
+                -- subtext0  = "#",
+                -- overlay2  = "#",
+                -- overlay1  = "#",
+                -- overlay0  = "#",
+                -- surface2  = "#",
+                -- surface1  = "#",
+                -- surface0  = "#",
+                -- base      = "#",
+                -- mantle    = "#",
+                crust     = "#211a25",
+        }
+}
+
 local customCol = function(colors)
         return {
 
@@ -22,7 +53,7 @@ local customCol = function(colors)
                 CursorLine                       = { bg = colors.none },
                 CursorLineNr                     = { fg = colors.flamingo },
                 Define                           = { fg = colors.pink },
-                DiagnosticError                  = { fg = colors.text, bg = colors.crust },
+                DiagnosticError                  = { bg = colors.crust },
                 DiagnosticInfo                   = { bg = colors.crust },
                 DiagnosticWarn                   = { bg = colors.crust },
                 Directory                        = { fg = ivory },
@@ -489,12 +520,7 @@ return {
                         no_italic              = true,
                         no_bold                = false,
                         no_underline           = false,
-                        color_overrides        = {
-                                mocha = {
-                                        -- crust  = "#000000",
-                                        -- mantle = "#000000",
-                                },
-                        },
+                        -- color_overrides        = noita,
                         custom_highlights      = customCol,
                         default_integrations   = true,
                         integrations           = {

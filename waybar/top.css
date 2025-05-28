@@ -371,8 +371,8 @@
 }
 
 #memory.icon.norm {
-        color: @norm;
-        background: @normTr;
+        color: @normTr;
+        background: @norm;
 }
 
 #memory.icon.warning {

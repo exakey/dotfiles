@@ -79,6 +79,8 @@
         c 2
         v 3
         q 0
+        a +
+        z -
 )
 
 (deflayermap (fuckeys)
@@ -120,10 +122,10 @@
         f f
         u u
 
-        n left
-        m down
-        , up
-        . right
+        b left
+        n down
+        m up
+        , right
 )
 
 (deflayermap (symbols-left)
@@ -161,25 +163,25 @@
         k S-7
         l S-8
 
-        n -
-        m +
-        , =
-        . S-min
+        b =
+        n +
+        m -
+        , S-min
 )
 
 (deflayermap (mouse)
         n ret
         c esc
-        u mlft
-        i mrgt
-        w mlft
-        e mrgt
+        y mlft
+        o mrgt
+        r mlft
+        q mrgt
         g mmtp
 
-        q (mwheel-down 100 120)
-        r (mwheel-up   100 120)
-        y (mwheel-down 100 120)
-        o (mwheel-up   100 120)
+        w (mwheel-up   100 120)
+        e (mwheel-down 100 120)
+        u (mwheel-down 100 120)
+        i (mwheel-up   100 120)
 
         h (movemouse-left  8 1)
         j (movemouse-down  8 1)
@@ -187,7 +189,7 @@
         l (movemouse-right 8 1)
 
         a (movemouse-accel-left  5 300 1 7)
-        s (movemouse-accel-down  5 300 1 7)
-        d (movemouse-accel-up    5 300 1 7)
+        s (movemouse-accel-up    5 300 1 7)
+        d (movemouse-accel-down  5 300 1 7)
         f (movemouse-accel-right 5 300 1 7)
 )

@@ -406,7 +406,7 @@
                         "states": {
                                 "full": 100,
                                 "good": 99,
-                                "warning": 30,
+                                "warning": 50,
                                 "critical": 15
                         },
                         "format": "{icon}",
@@ -425,7 +425,7 @@
                         "states": {
                                 "full": 100,
                                 "good": 99,
-                                "warning": 30,
+                                "warning": 50,
                                 "critical": 15
                         },
                         "format": "{capacity}",
