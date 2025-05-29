@@ -122,10 +122,10 @@
         f f
         u u
 
-        b left
-        n down
-        m up
-        , right
+        n left
+        m down
+        , up
+        . right
 )
 
 (deflayermap (symbols-left)
@@ -163,10 +163,10 @@
         k S-7
         l S-8
 
-        b =
         n +
         m -
-        , S-min
+        , =
+        . S-min
 )
 
 (deflayermap (mouse)

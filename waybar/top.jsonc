@@ -108,7 +108,7 @@
                         ""
                 ],
                 "custom/updates": {
-                        "exec": "$HOME/.local/share/bin/systemupdate.sh",
+                        "exec": "$HOME/.local/share/bin/systemupdate",
                         "return-type": "json",
                         "format": "{}",
                         "rotate": 0,
@@ -154,7 +154,7 @@
                         "format-en": "█",
                         // "format-ru": "▉",
                         "format-ru": "▄",
-                        "on-click": "$HOME/.local/share/bin/keyboardswitch.sh"
+                        "on-click": "$HOME/.local/share/bin/keyboardswitch"
                 },
                 "cava": {
                         "framerate": 120,
@@ -202,8 +202,8 @@
                         },
                         "device": "intel_backlight",
                         "format": "{icon}",
-                        "on-click": "$HOME/.local/share/bin/hyprsunset.sh",
-                        "on-click-right": "$HOME/.local/share/bin/shaders.sh",
+                        "on-click": "$HOME/.local/share/bin/hyprsunset",
+                        "on-click-right": "$HOME/.local/share/bin/shaders",
                         "tooltip-format": "{icon} {percent}",
                         "format-icons": [
                                 "",
@@ -223,8 +223,8 @@
                 "backlight": {
                         "device": "intel_backlight",
                         "format": "{percent}",
-                        "on-click": "$HOME/.local/share/bin/hyprsunset.sh",
-                        "on-click-right": "$HOME/.local/share/bin/shaders.sh",
+                        "on-click": "$HOME/.local/share/bin/hyprsunset",
+                        "on-click-right": "$HOME/.local/share/bin/shaders",
                         "tooltip-format": "{icon} {percent}%",
                         "on-scroll-up": "brightnessctl set 1%+",
                         "on-scroll-down": "brightnessctl set 1%-",
@@ -274,10 +274,10 @@
                         },
                         "tooltip": true,
                         "tooltip-format": "Device: {desc}",
-                        "on-click": "$HOME/.local/share/bin/volumecontrol.sh -o m",
+                        "on-click": "$HOME/.local/share/bin/volumecontrol -o m",
                         "on-click-right": "hyprctl dispatch exec pavucontrol",
-                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol.sh -o i",
-                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol.sh -o d",
+                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol -o i",
+                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol -o d",
                         "min-length": 1,
                         "max-length": 6
                 },
@@ -285,9 +285,9 @@
                         "format": "{volume}",
                         "tooltip": true,
                         "tooltip-format": "Device: {desc}",
-                        "on-click": "$HOME/.local/share/bin/volumecontrol.sh -o m",
-                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol.sh -o i",
-                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol.sh -o d",
+                        "on-click": "$HOME/.local/share/bin/volumecontrol -o m",
+                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol -o i",
+                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol -o d",
                         "min-length": 2,
                         "max-length": 6
                 },
@@ -297,11 +297,11 @@
                         "tooltip": false
                 },
                 "custom/wifi": {
-                        "exec": "$HOME/.config/waybar/scripts/wifiinfo.sh",
+                        "exec": "$HOME/.config/waybar/scripts/wifiinfo",
                         "return-type": "json",
                         "format": "{}",
                         "tooltip": true,
-                        "on-click": "$HOME/.local/share/bin/wifimenu.sh -o i",
+                        "on-click": "$HOME/.local/share/bin/wifimenu -o i",
                         "interval": 1,
                         "min-length": 1,
                         "max-length": 7
@@ -310,7 +310,7 @@
                         "format-wifi": "{essid}",
                         "format-ethernet": "{ifname}",
                         "tooltip": false,
-                        "on-click": "$HOME/.local/share/bin/wifimenu.sh -o i",
+                        "on-click": "$HOME/.local/share/bin/wifimenu -o i",
                         "interval": 1,
                         "min-length": 1,
                         "max-length": 12
@@ -322,7 +322,7 @@
                                 "critical": 80
                         },
                         "format": "",
-                        "on-click": "$HOME/.local/share/bin/cpu.sh",
+                        "on-click": "$HOME/.local/share/bin/cpu",
                         "interval": 1,
                         "tooltip": false,
                         "min-length": 1,
@@ -348,10 +348,10 @@
                         "max-length": 10
                 },
                 "custom/cpuinfo": {
-                        "exec": "$HOME/.local/share/bin/cpuinfo.sh",
+                        "exec": "$HOME/.local/share/bin/cpuinfo",
                         "return-type": "json",
                         "format": "{}",
-                        "on-click": "$HOME/.local/share/bin/cpu.sh",
+                        "on-click": "$HOME/.local/share/bin/cpu",
                         "tooltip": true,
                         "interval": 5,
                         "min-length": 4,
@@ -365,7 +365,7 @@
                         "max-length": 10
                 },
                 "custom/gpuinfo": {
-                        "exec": "$HOME/.local/share/bin/gpuinfo.sh",
+                        "exec": "$HOME/.local/share/bin/gpuinfo",
                         "return-type": "json",
                         "format": "{}",
                         "tooltip": true,
