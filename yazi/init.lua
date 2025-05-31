@@ -19,10 +19,22 @@ end
 require("full-border"):setup({
         type = ui.Border.PLAIN,
 })
+
 require("git"):setup()
 -- require("glow"):setup()
 -- require("hexyl"):setup()
 -- require("lsar"):setup()
+
 require("fuse-archive"):setup({
         smart_enter = true
+})
+
+require("telegram-send"):setup({
+        command      = "telegram-send --file",
+        notification = true,
+})
+
+require("copy-file-contents"):setup({
+        append_char  = "\n",
+        notification = true,
 })

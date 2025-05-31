@@ -1,12 +1,12 @@
-$HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarswitch.sh ht
-
+$HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarswitch ht
 [
         {
+                "name": "workspaces",
                 "mod": "dock",
                 "layer": "top",
                 "position": "top",
                 "margin-top": 10,
-                "margin-bottom": -4,
+                "margin-bottom": -7,
                 "height": 1,
                 "fixed-center": true,
                 "exclusive": true,
@@ -16,6 +16,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                 "margin-left": 40,
                 "margin-right": 40,
                 "modules-center": ["hyprland/workspaces", ""],
+                // "modules-right": ["hyprland/workspaces", ""],
                 "hyprland/workspaces": {
                         "rotate": 0,
                         "all-outputs": true,
@@ -53,6 +54,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
         },
         {
                 "mod": "dock",
+                "name": "main",
                 "layer": "top",
                 "position": "top",
                 "margin-top": 0,
@@ -76,14 +78,21 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         ""
                 ],
                 "modules-center": [
-                        "clock",
+                        // "clock",
+                        "hyprland/submap",
+                        // "custom/separators",
+                        "hyprland/language",
+                        // "custom/separators",
                         "custom/updates",
                         // "hyprland/workspaces",
                         ""
                 ],
                 "modules-right": [
-                        "hyprland/submap",
-                        "hyprland/language",
+                        // "hyprland/submap",
+                        // "custom/separators",
+                        // "custom/updates",
+                        // "custom/separators",
+                        // "hyprland/language",
                         "custom/separators",
                         "custom/wifi",
                         "network",
@@ -100,11 +109,10 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         ""
                 ],
                 "custom/updates": {
-                        "exec": "$HOME/.local/share/bin/systemupdate.sh",
+                        "exec": "$HOME/.local/share/bin/systemupdate",
                         "return-type": "json",
                         "format": "{}",
                         "rotate": 0,
-                        "on-click": "hyprctl dispatch exec '$HOME/.local/share/bin/systemupdate.sh up'",
                         "interval": 43200,
                         "tooltip": true,
                         "signal": 20
@@ -144,9 +152,10 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                 },
                 "hyprland/language": {
                         "format": "{}",
-                        "format-en": "US",
-                        "format-ru": "RU",
-                        "on-click": "$HOME/.local/share/bin/keyboardswitch.sh"
+                        "format-en": "🮆",
+                        // "format-ru": "▉",
+                        "format-ru": "🬋",
+                        "on-click": "$HOME/.local/share/bin/keyboardswitch"
                 },
                 "cava": {
                         "framerate": 120,
@@ -194,8 +203,8 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         },
                         "device": "intel_backlight",
                         "format": "{icon}",
-                        "on-click": "$HOME/.local/share/bin/hyprsunset.sh",
-                        "on-click-right": "$HOME/.local/share/bin/shaders.sh",
+                        "on-click": "$HOME/.local/share/bin/hyprsunset",
+                        "on-click-right": "$HOME/.local/share/bin/shaders",
                         "tooltip-format": "{icon} {percent}",
                         "format-icons": [
                                 "",
@@ -215,8 +224,8 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                 "backlight": {
                         "device": "intel_backlight",
                         "format": "{percent}",
-                        "on-click": "$HOME/.local/share/bin/hyprsunset.sh",
-                        "on-click-right": "$HOME/.local/share/bin/shaders.sh",
+                        "on-click": "$HOME/.local/share/bin/hyprsunset",
+                        "on-click-right": "$HOME/.local/share/bin/shaders",
                         "tooltip-format": "{icon} {percent}%",
                         "on-scroll-up": "brightnessctl set 1%+",
                         "on-scroll-down": "brightnessctl set 1%-",
@@ -266,10 +275,10 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         },
                         "tooltip": true,
                         "tooltip-format": "Device: {desc}",
-                        "on-click": "$HOME/.local/share/bin/volumecontrol.sh -o m",
+                        "on-click": "$HOME/.local/share/bin/volumecontrol -o m",
                         "on-click-right": "hyprctl dispatch exec pavucontrol",
-                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol.sh -o i",
-                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol.sh -o d",
+                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol -o i",
+                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol -o d",
                         "min-length": 1,
                         "max-length": 6
                 },
@@ -277,23 +286,23 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "format": "{volume}",
                         "tooltip": true,
                         "tooltip-format": "Device: {desc}",
-                        "on-click": "$HOME/.local/share/bin/volumecontrol.sh -o m",
-                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol.sh -o i",
-                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol.sh -o d",
+                        "on-click": "$HOME/.local/share/bin/volumecontrol -o m",
+                        "on-scroll-up": "$HOME/.local/share/bin/volumecontrol -o i",
+                        "on-scroll-down": "$HOME/.local/share/bin/volumecontrol -o d",
                         "min-length": 2,
                         "max-length": 6
                 },
                 "hyprland/submap": {
-                        "format": "{}",
+                        "format": "🮆",
                         "max-length": 8,
                         "tooltip": false
                 },
                 "custom/wifi": {
-                        "exec": "$HOME/.config/waybar/scripts/wifiinfo.sh",
+                        "exec": "$HOME/.config/waybar/scripts/wifiinfo",
                         "return-type": "json",
                         "format": "{}",
                         "tooltip": true,
-                        "on-click": "$HOME/.local/share/bin/wifimenu.sh -o i",
+                        "on-click": "$HOME/.local/share/bin/wifimenu -o i",
                         "interval": 1,
                         "min-length": 1,
                         "max-length": 7
@@ -302,7 +311,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "format-wifi": "{essid}",
                         "format-ethernet": "{ifname}",
                         "tooltip": false,
-                        "on-click": "$HOME/.local/share/bin/wifimenu.sh -o i",
+                        "on-click": "$HOME/.local/share/bin/wifimenu -o i",
                         "interval": 1,
                         "min-length": 1,
                         "max-length": 12
@@ -314,7 +323,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                                 "critical": 80
                         },
                         "format": "",
-                        "on-click": "$HOME/.local/share/bin/cpu.sh",
+                        "on-click": "$HOME/.local/share/bin/cpu",
                         "interval": 1,
                         "tooltip": false,
                         "min-length": 1,
@@ -340,10 +349,10 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "max-length": 10
                 },
                 "custom/cpuinfo": {
-                        "exec": "$HOME/.local/share/bin/cpuinfo.sh",
+                        "exec": "$HOME/.local/share/bin/cpuinfo",
                         "return-type": "json",
                         "format": "{}",
-                        "on-click": "$HOME/.local/share/bin/cpu.sh",
+                        "on-click": "$HOME/.local/share/bin/cpu",
                         "tooltip": true,
                         "interval": 5,
                         "min-length": 4,
@@ -357,7 +366,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "max-length": 10
                 },
                 "custom/gpuinfo": {
-                        "exec": "$HOME/.local/share/bin/gpuinfo.sh",
+                        "exec": "$HOME/.local/share/bin/gpuinfo",
                         "return-type": "json",
                         "format": "{}",
                         "tooltip": true,
@@ -398,7 +407,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "states": {
                                 "full": 100,
                                 "good": 99,
-                                "warning": 30,
+                                "warning": 50,
                                 "critical": 15
                         },
                         "format": "{icon}",
@@ -417,7 +426,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "states": {
                                 "full": 100,
                                 "good": 99,
-                                "warning": 30,
+                                "warning": 50,
                                 "critical": 15
                         },
                         "format": "{capacity}",

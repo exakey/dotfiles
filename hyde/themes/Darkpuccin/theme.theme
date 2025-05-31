@@ -1,226 +1,73 @@
-[manager]
-        cwd             = { fg = "green",           bg = "reset" }
+/*
+bg - background
+fg - foreground
+br - border
+*/
 
-        # Hovered
-        hovered         = { bold = true }
-        preview_hovered = { underline = false }
+/* Main Colors */
+@define-color main-bg               #11111b;
+@define-color main-fg               #cdd6f4;
+@define-color main-br               #cdd6f4;
 
-        # Find
-        find_keyword    = { fg = "black",           bg = "green", italic = true, bold = true }
-        find_position   = { fg = "green",           bg = "black", italic = true }
+@define-color active-fg             #9399b2;
+@define-color active-bg             #1e1e2e;
 
-        # Tab
-        tab_active      = { fg = "black",           bg = "green" }
-        tab_inactive    = { fg = "green",           bg = "#1e1e2e" }
-        tab_width       = 1
+@define-color hover-bg              #45475a;
+@define-color hover-fg              #11111b;
 
-        # Marker
-        marker_copied   = { fg = "green",           bg = "black" }
-        marker_cut      = { fg = "green",           bg = "black" }
-        marker_selected = { fg = "red",             bg = "black" }
+/* Module Colors */
+@define-color module-fg             #f5e0dc;
+@define-color module-bg             #1e1e2e;
 
-        # Count
-        count_copied    = { fg = "black",           bg = "green" }
-        count_cut       = { fg = "black",           bg = "green" }
-        count_selected  = { fg = "black",           bg = "red" }
+@define-color media                 #1e1e2e;
+@define-color blank-fg              #11111b;
+@define-color blank-bg              #313244;
+@define-color empty-fg              #313244;
 
-        # Border
-        border_symbol   = "│"
-        border_style    = { fg = "black" }
+/* State Colors */
+@define-color full                  #a6e3a1;
+@define-color good                  #a6e3a1;
+@define-color norm                  #cdd6f4;
+@define-color warning               #f2cdcd;
+@define-color critical              #f38ba8;
+@define-color charging              #add8e6;
 
-        # Highlighting
-        syntect_theme   = "~/.config/yazi/Catppuccin-mocha.tmTheme"
+@define-color fullTr                #202628;
+@define-color goodTr                #202628;
+@define-color normTr                #242531;
+@define-color warningTr             #28262a;
+@define-color criticalTr            #281d29;
+@define-color chargingTr            #21252f;
 
+@define-color min                   #313244;
+@define-color midl                  #585b70;
+@define-color mid                   #7f849c;
+@define-color midh                  #a6adc8;
+@define-color max                   #cdd6f4;
 
-[status]
-        sep_left        = {open = "", close = ""}
-        sep_right       = {open = "", close = ""}
-        separator_style = { fg = "#313244",         bg = "black" }
-
-
-[mode]
-        normal_main     = { fg = "black",           bg = "red",     bold = false }
-        normal_alt      = { bg = "black",           fg = "red",     bold = false }
-        select_main     = { fg = "black",           bg = "green",   bold = false }
-        select_alt      = { bg = "black",           fg = "green",   bold = false }
-        unset_main      = { fg = "green",           bg = "#1e1e2e", bold = false }
-        unset_alt       = { bg = "green",           fg = "#1e1e2e", bold = false }
-
-        # Progress
-        progress_label  = { fg = "black",           bold = true }
-        progress_normal = { fg = "blue",            bg = "#1e1e2e" }
-        progress_error  = { fg = "black",           bg = "#f38ba8" }
-
-        # Permissions
-        perm_type       = { fg = "#cdd6f4" }
-        perm_read       = { fg = "#a6e3a1" }
-        perm_write      = { fg = "#f9e2af" }
-        perm_exec       = { fg = "#f38ba8" }
-        perm_sep        = { fg = "#313244" }
-
-
-[input]
-        border          = { fg = "green" }
-        title           = {}
-        value           = {}
-        selected        = { reversed = true }
-
-
-[select]
-        border          = { fg = "cyan" }
-        active          = { fg = "cyan" }
-        inactive        = {}
-
-
-[tasks]
-        border          = { fg = "cyan" }
-        title           = {}
-        hovered         = { underline = false }
-
-
-[which]
-        mask            = { bg = "#1e1e2e" }
-        cand            = { fg = "green" }
-        rest            = { fg = "#9399b2" }
-        desc            = { fg = "green" }
-        separator       = "  "
-        separator_style = { fg = "#585b70" }
-
-
-[help]
-        on              = { fg = "#f5c2e7" }
-        exec            = { fg = "#94e2d5" }
-        desc            = { fg = "#9399b2" }
-        hovered         = { bg = "#585b70",         bold = true }
-        footer          = { fg = "#45475a",         bg = "white" }
-
-
-[spot]
-        border   = { fg = "#181825" }
-        title    = { fg = "#cdd6f4" }
-        tbl_col  = { fg = "#cdd6f4" }
-        tbl_cell = { bg = "#11111b", reversed = false, bold = true }
-
-
-[filetype]
-rules = [
-        # Images
-        { mime = "image/*",                     fg = "#f9e2af" },
-
-        # Videos
-        { mime = "video/*",                     fg = "#94e2d5" },
-        { mime = "audio/*",                     fg = "#94e2d5" },
-
-        # Archives
-        { mime = "application/zip",             fg = "#f5c2e7" },
-        { mime = "application/gzip",            fg = "#f5c2e7" },
-        { mime = "application/tar",             fg = "#f5c2e7" },
-        { mime = "application/bzip",            fg = "#f5c2e7" },
-        { mime = "application/bzip2",           fg = "#f5c2e7" },
-        { mime = "application/7z-compressed",   fg = "#f5c2e7" },
-        { mime = "application/rar",             fg = "#f5c2e7" },
-
-        # Fallback
-        { name = "*",                           fg = "#6c7086" },
-        { name = "*/",                          fg = "red" },
-]
-
-
-[icons]
-
-"Desktop/"       = ""
-"Documents/"     = ""
-"Downloads/"     = ""
-"Pictures/"      = ""
-"Music/"         = ""
-"Movies/"        = ""
-"Videos/"        = ""
-"Public/"        = ""
-"Library/"       = ""
-"Development/"   = ""
-".config/"       = ""
-
-# Git
-".git/"          = ""
-".gitignore"     = ""
-".gitmodules"    = ""
-".gitattributes" = ""
-
-# Dotfiles
-".DS_Store"      = ""
-".bashrc"        = ""
-".bashprofile"   = ""
-".zshrc"         = ""
-".zshenv"        = ""
-".zprofile"      = ""
-".vimrc"         = ""
-
-# Text
-"*.txt"          = ""
-"*.md"           = ""
-
-# Archives
-"*.zip"          = ""
-"*.tar"          = ""
-"*.gz"           = ""
-"*.7z"           = ""
-
-# Audio
-"*.mp3"          = ""
-"*.flac"         = ""
-"*.wav"          = ""
-
-# Movies
-"*.mp4"          = ""
-"*.mkv"          = ""
-"*.avi"          = ""
-"*.mov"          = ""
-
-# Images
-"*.jpg"          = ""
-"*.jpeg"         = ""
-"*.png"          = ""
-"*.gif"          = ""
-"*.webp"         = ""
-"*.avif"         = ""
-"*.bmp"          = ""
-"*.ico"          = ""
-"*.svg"          = ""
-
-# Programming
-"*.c"            = ""
-"*.cpp"          = ""
-"*.h"            = ""
-"*.hpp"          = ""
-"*.rs"           = ""
-"*.go"           = ""
-"*.py"           = ""
-"*.js"           = ""
-"*.ts"           = ""
-"*.tsx"          = ""
-"*.jsx"          = ""
-"*.rb"           = ""
-"*.php"          = ""
-"*.java"         = ""
-"*.sh"           = ""
-"*.fish"         = ""
-"*.swift"        = ""
-"*.vim"          = ""
-"*.lua"          = ""
-"*.html"         = ""
-"*.css"          = ""
-"*.scss"         = ""
-"*.json"         = ""
-"*.toml"         = ""
-"*.yml"          = ""
-"*.yaml"         = ""
-"*.ini"          = ""
-"*.conf"         = ""
-"*.v"            = "󰍛"
-"*.sv"           = "󰍛"
-"*.svh"          = "󰍛"
-"*.tcl"          = "󰛓"
-
-# Default
-"*"              = ""
-"*/"             = ""
+@define-color rosewater             #f5e0dc;
+@define-color flamingo              #f2cdcd;
+@define-color pink                  #f5c2e7;
+@define-color mauve                 #cba6f7;
+@define-color red                   #f38ba8;
+@define-color maroon                #eba0ac;
+@define-color peach                 #fab387;
+@define-color yellow                #f9e2af;
+@define-color green                 #a6e3a1;
+@define-color teal                  #94e2d5;
+@define-color sky                   #89dceb;
+@define-color sapphire              #74c7ec;
+@define-color blue                  #89b4fa;
+@define-color lavender              #b4befe;
+@define-color text                  #cdd6f4;
+@define-color subtext1              #bac2de;
+@define-color subtext0              #a6adc8;
+@define-color overlay2              #9399b2;
+@define-color overlay1              #7f849c;
+@define-color overlay0              #6c7086;
+@define-color surface2              #585b70;
+@define-color surface1              #45475a;
+@define-color surface0              #313244;
+@define-color base                  #1e1e2e;
+@define-color mantle                #181825;
+@define-color crust                 #11111b;

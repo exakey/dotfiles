@@ -151,9 +151,9 @@
                 },
                 "hyprland/language": {
                         "format": "{}",
-                        "format-en": "█",
+                        "format-en": "🮆",
                         // "format-ru": "▉",
-                        "format-ru": "▄",
+                        "format-ru": "🬋",
                         "on-click": "$HOME/.local/share/bin/keyboardswitch"
                 },
                 "cava": {
@@ -292,7 +292,7 @@
                         "max-length": 6
                 },
                 "hyprland/submap": {
-                        "format": "█",
+                        "format": "🮆",
                         "max-length": 8,
                         "tooltip": false
                 },

@@ -1,9 +1,9 @@
 -- FIX: broken `:Inspect` https://github.com/neovim/neovim/issues/31675
 -- can be removed on the version after 0.10.3
 
-vim.hl             = vim.highlight
+vim.hl                = vim.highlight
 
-vim.g.projects_dir = vim.env.HOME .. '/dev/'
+vim.g.projects_dir    = vim.env.HOME .. '/dev/'
 
 ------------------------------------------------------------------------------------------------------------------------
 -- CONFIG
@@ -71,11 +71,37 @@ vim.lsp.enable({
         -- "css-variables",
         "emmet",
         "glsl-analyzer",
-        "gopls",
+        -- "gopls",
         "jsonls",
         "luals",
         -- "pylsp",
         -- "pylyzer",
         "pyright",
         "ruff",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+        pattern  = "go",
+        callback = function()
+                local root = vim.fs.dirname(vim.fs.find({ "go.work", "go.mod", ".git" }, { upward = true })[1])
+                if not root then return end
+
+                local settings_path  = root .. "/gopls.json"
+
+                local gopls_settings = {}
+                local stat           = vim.uv.fs_stat(settings_path)
+                if stat and stat.type == "file" then
+                        local ok, parsed = pcall(function()
+                                return vim.fn.json_decode(vim.fn.readfile(settings_path))
+                        end)
+                        if ok then gopls_settings = parsed end
+                end
+
+                vim.lsp.start({
+                        name     = "gopls",
+                        cmd      = { "gopls" },
+                        root_dir = root,
+                        settings = { gopls = gopls_settings }
+                })
+        end,
 })

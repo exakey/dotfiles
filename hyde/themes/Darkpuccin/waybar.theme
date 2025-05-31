@@ -1,4 +1,4 @@
-$HOME/.config/waybar/theme.css
+$HOME/.config/waybar/theme.css && $HOME/.local/share/bin/waybarswitch ht
 /*
 bg - background
 fg - foreground
