@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable Turboboost
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 20
+ExecStart=$${HOME}/.local/bin/turboboost
+RemainAfterExit=true
+
+[Install]
+WantedBy=default.target

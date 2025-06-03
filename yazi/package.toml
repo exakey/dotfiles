@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "0725851"
-hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
+rev = "63f9650"
+hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:hide-preview"
 rev = "0725851"
-hash = "55904f17e1053cfb91dacd9015a99f9d"
+hash = "b25c2acb08d9ca5ff5cf71ea764fed8d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
@@ -22,11 +22,6 @@ hash = "b482f4f2d3c4e0aa3f8db89a95699439"
 use = "yazi-rs/plugins:lsar"
 rev = "0725851"
 hash = "fc2c9438d402f7c4ac230aebf5a746d1"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:git"
-rev = "0725851"
-hash = "771f18427fb75fb19990ce602bb322f4"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
@@ -79,11 +74,6 @@ rev = "031999d"
 hash = "e55d11c23b7b70cf7015503f24d42205"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:toggle-pane"
-rev = "b12a9ab"
-hash = "5c9dda1a587b8f5b6f63e3d5375bda88"
-
-[[plugin.deps]]
 use = "wylie102/duckdb"
 rev = "02f902d"
 hash = "9893839d5134aaecf6fafbeff6cac18e"
@@ -102,6 +92,16 @@ hash = "f84d828d2b77607c6b066f8cd85598b7"
 use = "AnirudhG07/plugins-yazi:copy-file-contents"
 rev = "524c52c"
 hash = "27c50e6bc15c09096505b805b238ade0"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "63f9650"
+hash = "d5d4f3527592da5fbe77fd6f51815f80"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "63f9650"
+hash = "bf6f074cd41ee33c3360341d168f9733"
 
 [flavor]
 deps = []

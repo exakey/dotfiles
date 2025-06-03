@@ -1,4 +1,72 @@
-local numbers                           = {
+------------------------------------------------------------------------------------------------------------------------
+-- LSP SERVERS
+
+local capabilities = {
+        textDocument = {
+                foldingRange = {
+                        dynamicRegistration = false,
+                        lineFoldingOnly     = true,
+                }
+        }
+}
+
+capabilities       = require("blink.cmp").get_lsp_capabilities(capabilities)
+
+vim.lsp.config("*", {
+        capabilities = capabilities,
+        root_markers = { ".git" }
+})
+
+vim.lsp.enable({
+        -- "asm",
+        -- "basedpyright",
+        "bashls",
+        "clangd",
+        -- "cssls",
+        -- "css-variables",
+        "emmet",
+        "glsl-analyzer",
+        -- "gopls",
+        "jsonls",
+        "luals",
+        -- "pylsp",
+        -- "pylyzer",
+        "pyright",
+        "ruff",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+        pattern  = "go",
+        callback = function()
+                local root = vim.fs.dirname(vim.fs.find({ "go.work", "go.mod", ".git" }, { upward = true })[1])
+                if not root then return end
+
+                local settings_path  = root .. "/gopls.json" or "/gopls.jsonc"
+
+                local gopls_settings = {}
+                local stat           = vim.uv.fs_stat(settings_path)
+                if stat and stat.type == "file" then
+                        local ok, parsed = pcall(function()
+                                return vim.fn.json_decode(vim.fn.readfile(settings_path))
+                        end)
+                        if ok then gopls_settings = parsed end
+                end
+
+                vim.lsp.start({
+                        name     = "gopls",
+                        cmd      = { "gopls" },
+                        root_dir = root,
+                        settings = { gopls = gopls_settings }
+                })
+        end,
+})
+
+------------------------------------------------------------------------------------------------------------------------
+-- DIAGNOSTICS
+
+---@diagnostic disable-next-line: unused-local
+local icons        = require("core.icons").diagnostics
+local numbers      = {
         text = {
                 [vim.diagnostic.severity.ERROR] = "",
                 [vim.diagnostic.severity.WARN]  = "",
@@ -14,8 +82,57 @@ local numbers                           = {
         },
 }
 
----@diagnostic disable-next-line: unused-local
-local icons                             = require("core.icons").diagnostics
+vim.diagnostic.config {
+        signs            = numbers,
+        jump             = { float = false },
+        virtual_text     = false,
+        update_in_insert = false,
+        severity_sort    = true,
+
+        -- format           = function(diagnostic)
+        --         local special_sources = {
+        --                 ["Lua Diagnostics."]  = "lua",
+        --                 ["Lua Syntax Check."] = "lua",
+        --         }
+        --
+        --         local message         = icons[vim.diagnostic.severity[diagnostic.severity]]
+        --         if diagnostic.source then
+        --                 message = string.format("%s %s", message, special_sources[diagnostic.source] or diagnostic
+        --                         .source)
+        --         end
+        --         if diagnostic.code then
+        --                 message = string.format("%s[%s]", message, diagnostic.code)
+        --         end
+        --
+        --         return message .. " "
+        -- end,
+}
+
+------------------------------------------------------------------------------------------------------------------------
+-- DOCUMENT HIGHLIGHTING
+local function client_supports_method(client, method, bufnr)
+        if vim.fn.has "nvim-0.11" == 1 then
+                return client:supports_method(method, bufnr)
+        else
+                return client:supports_method(method, { bufnr = bufnr })
+        end
+end
+
+-- local client = vim.lsp.get_client_by_id(event.data.client_id)
+-- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+--         local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
+--
+--         vim.api.nvim_clear_autocmd({ "CursorHold", "CursorHoldI" }, {
+--                 buffer   = event.buf,
+--                 group    = highlight_augroup,
+--                 callback = vim.lsp.buf.document_highlight()
+--         })
+--         vim.api.nvim_clear_autocmd({ "CursorMoved", "CursorMovedI" }, {
+--                 buffer   = event.buf,
+--                 group    = highlight_augroup,
+--                 callback = vim.lsp.buf.clear_references()
+--         })
+-- end
 
 ------------------------------------------------------------------------------------------------------------------------
 -- HANDLERS
@@ -81,7 +198,7 @@ end
 -- LSP PROGRESS
 
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
-local progress                          = vim.defaulttable()
+local progress = vim.defaulttable()
 vim.api.nvim_create_autocmd("LspProgress", {
         ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
         callback = function(ev)
@@ -124,56 +241,3 @@ vim.api.nvim_create_autocmd("LspProgress", {
                 })
         end,
 })
-
-------------------------------------------------------------------------------------------------------------------------
-
-vim.api.nvim_create_user_command("LspCapabilities", function(ctx)
-        local client = vim.lsp.get_clients({ name = ctx.args })[1]
-        local newBuf = vim.api.nvim_create_buf(true, true)
-        local info   = {
-                capabilities        = client.capabilities,
-                server_capabilities = client.server_capabilities,
-                config              = client.config,
-        }
-        vim.api.nvim_buf_set_lines(newBuf, 0, -1, false, vim.split(vim.inspect(info), "\n"))
-        vim.api.nvim_buf_set_name(newBuf, client.name .. " capabilities")
-        vim.bo[newBuf].filetype = "lua" -- syntax highlighting
-        vim.cmd.buffer(newBuf)          -- open
-        vim.keymap.set("n", "q", vim.cmd.bdelete, { buffer = newBuf })
-end, {
-        nargs = 1,
-        complete = function()
-                return vim.iter(vim.lsp.get_clients { bufnr = 0 })
-                    :map(function(client) return client.name end)
-                    :totable()
-        end,
-})
-
-------------------------------------------------------------------------------------------------------------------------
--- DIAGNOSTICS
-
-vim.diagnostic.config {
-        signs            = numbers,
-        jump             = { float = false },
-        virtual_text     = false,
-        update_in_insert = false,
-        severity_sort    = true,
-
-        -- format           = function(diagnostic)
-        --         local special_sources = {
-        --                 ["Lua Diagnostics."]  = "lua",
-        --                 ["Lua Syntax Check."] = "lua",
-        --         }
-        --
-        --         local message         = icons[vim.diagnostic.severity[diagnostic.severity]]
-        --         if diagnostic.source then
-        --                 message = string.format("%s %s", message, special_sources[diagnostic.source] or diagnostic
-        --                         .source)
-        --         end
-        --         if diagnostic.code then
-        --                 message = string.format("%s[%s]", message, diagnostic.code)
-        --         end
-        --
-        --         return message .. " "
-        -- end,
-}

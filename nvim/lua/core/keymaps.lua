@@ -189,6 +189,9 @@ map(n, "qf", function() require("functions.comment").docstring() end, { desc = "
 map(n, "Q", function() require("functions.comment").addComment("eol") end, { desc = "󰆈 Append Comment", silent = true })
 map(n, "qo", function() require("functions.comment").addComment("below") end, { desc = "󰆈 Comment Below", silent = true })
 map(n, "qO", function() require("functions.comment").addComment("above") end, { desc = "󰆈 Comment Above", silent = true })
+map(n, "rq", function()
+        vim.cmd(("g/%s/d"):format(vim.fn.escape(vim.fn.substitute(vim.o.commentstring, "%s", "", "g"), "/.*[]~")))
+end, { desc = "󰆈 Comment Above", silent = true })
 
 ------------------------------------------------------------------------------------------------------------------------
 -- LSP

@@ -26,3 +26,29 @@ vim.api.nvim_create_user_command("Scratch", function()
                 vim.api.nvim_set_option_value(name, value, { buf = buf })
         end
 end, { desc = "Open a scratch buffer", nargs = 0 })
+
+vim.api.nvim_buf_create_user_command(0, "DeleteComments", function()
+        vim.cmd(("'<,'>g/%s/d"):format(vim.fn.escape(vim.fn.substitute(vim.o.commentstring, "%s", "", "g"), "/.*[]~")))
+end, { range = true, desc = "Delete comments in the current buffer" })
+
+vim.api.nvim_create_user_command("LspCapabilities", function(ctx)
+        local client = vim.lsp.get_clients({ name = ctx.args })[1]
+        local newBuf = vim.api.nvim_create_buf(true, true)
+        local info   = {
+                capabilities        = client.capabilities,
+                server_capabilities = client.server_capabilities,
+                config              = client.config,
+        }
+        vim.api.nvim_buf_set_lines(newBuf, 0, -1, false, vim.split(vim.inspect(info), "\n"))
+        vim.api.nvim_buf_set_name(newBuf, client.name .. " capabilities")
+        vim.bo[newBuf].filetype = "lua" -- syntax highlighting
+        vim.cmd.buffer(newBuf)          -- open
+        vim.keymap.set("n", "q", vim.cmd.bdelete, { buffer = newBuf })
+end, {
+        nargs = 1,
+        complete = function()
+                return vim.iter(vim.lsp.get_clients { bufnr = 0 })
+                    :map(function(client) return client.name end)
+                    :totable()
+        end,
+})

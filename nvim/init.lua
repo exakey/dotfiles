@@ -40,68 +40,9 @@ end
 
 safeRequire("core.commands")
 safeRequire("core.autocmds")
-safeRequire("core.diagnostics")
+-- safeRequire("core.diagnostics")
+safeRequire("core.lsp")
 safeRequire("core.keymaps")
 safeRequire("core.yank-paste")
 safeRequire("functions.quickfix")
 safeRequire("core.backdrop-underline-fix")
-
-local capabilities = {
-        textDocument = {
-                foldingRange = {
-                        dynamicRegistration = false,
-                        lineFoldingOnly     = true,
-                }
-        }
-}
-
-capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
-
-vim.lsp.config("*", {
-        capabilities = capabilities,
-        root_markers = { ".git" }
-})
-
-vim.lsp.enable({
-        -- "asm",
-        -- "basedpyright",
-        "bashls",
-        "clangd",
-        -- "cssls",
-        -- "css-variables",
-        "emmet",
-        "glsl-analyzer",
-        -- "gopls",
-        "jsonls",
-        "luals",
-        -- "pylsp",
-        -- "pylyzer",
-        "pyright",
-        "ruff",
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-        pattern  = "go",
-        callback = function()
-                local root = vim.fs.dirname(vim.fs.find({ "go.work", "go.mod", ".git" }, { upward = true })[1])
-                if not root then return end
-
-                local settings_path  = root .. "/gopls.json"
-
-                local gopls_settings = {}
-                local stat           = vim.uv.fs_stat(settings_path)
-                if stat and stat.type == "file" then
-                        local ok, parsed = pcall(function()
-                                return vim.fn.json_decode(vim.fn.readfile(settings_path))
-                        end)
-                        if ok then gopls_settings = parsed end
-                end
-
-                vim.lsp.start({
-                        name     = "gopls",
-                        cmd      = { "gopls" },
-                        root_dir = root,
-                        settings = { gopls = gopls_settings }
-                })
-        end,
-})
