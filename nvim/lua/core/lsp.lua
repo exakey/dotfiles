@@ -110,6 +110,7 @@ vim.diagnostic.config {
 
 ------------------------------------------------------------------------------------------------------------------------
 -- DOCUMENT HIGHLIGHTING
+
 local function client_supports_method(client, method, bufnr)
         if vim.fn.has "nvim-0.11" == 1 then
                 return client:supports_method(method, bufnr)
