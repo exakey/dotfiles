@@ -34,7 +34,7 @@ br - border
 
 @define-color fullTr                #202628;
 @define-color goodTr                #202628;
-@define-color normTr                #11111b;
+@define-color normTr                #1e1e2e;
 @define-color warningTr             #28262a;
 @define-color criticalTr            #281d29;
 @define-color chargingTr            #21252f;

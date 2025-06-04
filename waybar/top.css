@@ -151,7 +151,7 @@
 }
 
 #backlight.icon.max {
-        color: @normTr;
+        color: @main-bg;
         background: @max;
 }
 
@@ -214,7 +214,7 @@
 }
 
 #pulseaudio.icon.max {
-        color: @normTr;
+        color: @main-bg;
         background: @max;
 }
 
@@ -231,7 +231,7 @@
 }
 
 #custom-wifi {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
@@ -255,7 +255,7 @@
 }
 
 #cpu.icon {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
@@ -267,7 +267,7 @@
 }
 
 #cpu.icon.norm {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
 }
 
@@ -309,7 +309,7 @@
 }
 
 #custom-cpuinfo.icon {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
@@ -333,7 +333,7 @@
 }
 
 #custom-gpuinfo.icon {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
@@ -357,7 +357,7 @@
 }
 
 #memory.icon {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
@@ -371,7 +371,7 @@
 }
 
 #memory.icon.norm {
-        color: @normTr;
+        color: @main-bg;
         background: @norm;
 }
 
