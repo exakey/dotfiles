@@ -111,10 +111,10 @@
         g bspc
         spc ret
 
-        h h
-        j j
-        k k
-        l l
+        h left
+        j down
+        k up
+        l right
 
         a a
         s s
@@ -122,10 +122,10 @@
         f f
         u u
 
-        n left
-        m down
-        , up
-        . right
+        n h
+        m j
+        , k
+        . l
 )
 
 (deflayermap (symbols-left)

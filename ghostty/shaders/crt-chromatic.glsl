@@ -12,7 +12,7 @@ const float ABBERATION_FACTOR = 0.05; // Strength of color splitting effect
 // Glow/Bloom Settings
 const float DIM_CUTOFF = 0.35; // Threshold for what's considered a dim pixel
 const float BRIGHT_CUTOFF = 0.65; // Threshold for what's considered a bright pixel
-const float BRIGHT_BOOST = 1.2; // Brightness multiplier for bright pixels
+const float BRIGHT_BOOST = 1.3; // Brightness multiplier for bright pixels
 const float DIM_GLOW = 0.05; // Glow intensity for dim pixels
 const float BRIGHT_GLOW = 0.15; // Glow intensity for bright pixels
 const float COLOR_GLOW = 0.4; // Color bleeding intensity
