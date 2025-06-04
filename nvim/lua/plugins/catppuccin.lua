@@ -7,8 +7,8 @@ local noita     = {
                 -- flamingo  = "#",
                 -- pink      = "#",
                 -- mauve     = "#",
-                red       = "#cb341b",
-                maroon    = "#d17678",
+                red    = "#cb341b",
+                maroon = "#d17678",
                 -- peach     = "#",
                 -- yellow    = "#",
                 -- green     = "#",
@@ -28,7 +28,7 @@ local noita     = {
                 -- surface0  = "#",
                 -- base      = "#",
                 -- mantle    = "#",
-                crust     = "#211a25",
+                crust  = "#211a25",
         }
 }
 
@@ -247,7 +247,8 @@ local customCol = function(colors)
                 BlinkCmpMenuBorder               = { fg = colors.crust, bg = colors.crust },
                 BlinkCmpDocBorder                = { fg = colors.crust, bg = colors.crust },
                 -- BlinkCmpMenu                     = { link = "Normal" },
-                BlinkCmpMenu                     = { bg = "#13131E" },
+                -- BlinkCmpMenu                     = { bg = "#13131E" },
+                BlinkCmpMenu                     = { bg = "#0e0e16" },
                 BlinkCmpMenuSelection            = { link = "Visual" },
                 BlinkCmpSource                   = { link = "NonText" },
 
@@ -521,6 +522,11 @@ return {
                         no_bold                = false,
                         no_underline           = false,
                         -- color_overrides        = noita,
+                        color_overrides        = {
+                                mocha = {
+                                        crust = "#0e0e16"
+                                }
+                        },
                         custom_highlights      = customCol,
                         default_integrations   = true,
                         integrations           = {

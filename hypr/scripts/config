@@ -49,7 +49,8 @@ keybind = ctrl+shift+c=unbind
 keybind = ctrl+shift+e=unbind
 keybind = unconsumed:ctrl+shift+alt+c=copy_to_clipboard
 
-# background-opacity         = 0.8
+background-opacity         = 0
+
 custom-shader-animation    = true
 # custom-shader              = ~/.config/ghostty/shaders/crt-chromatic.glsl
 custom-shader              = ~/.config/ghostty/shaders/rgbsplit.glsl
