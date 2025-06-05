@@ -5,7 +5,8 @@ br - border
 */
 
 /* Main Colors */
-@define-color main-bg               #0e0e16;
+/* @define-color main-bg               rgba(17, 17, 27, 0.9); */
+@define-color main-bg               #11111b;
 @define-color main-fg               #cdd6f4;
 @define-color main-br               #cdd6f4;
 
