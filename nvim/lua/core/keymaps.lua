@@ -328,9 +328,9 @@ map(n, "<leader>or", "<cmd>set relativenumber!<CR>", { desc = " Relative line
 map(n, "<leader>on", "<cmd>set number!<CR>", { desc = " Line numbers", silent = true })
 map(n, "<leader>ow", "<cmd>set wrap!<CR>", { desc = "󰖶 Wrap", silent = true })
 
-map(n, "<leader>od", function()
-        vim.diagnostic.enable(not vim.diagnostic.is_enabled)
-end, { desc = "󰋽 Diagnostics", silent = true })
+-- map(n, "<leader>od", function()
+--         vim.diagnostic.enable(not vim.diagnostic.is_enabled)
+-- end, { desc = "󰋽 Diagnostics", silent = true })
 
 map(n, "<leader>oc", function() vim.wo.conceallevel = vim.wo.conceallevel == 0 and 2 or 0 end,
         { desc = "󰈉 Conceal", silent = true })

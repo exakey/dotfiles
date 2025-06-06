@@ -6,7 +6,7 @@ br - border
 
 /* Main Colors */
 /* @define-color main-bg               rgba(17, 17, 27, 0.9); */
-@define-color main-bg               #11111b;
+@define-color main-bg               #0e0e16;
 @define-color main-fg               #cdd6f4;
 @define-color main-br               #cdd6f4;
 
@@ -23,7 +23,7 @@ br - border
 @define-color media                 #1e1e2e;
 @define-color blank-fg              #0e0e0e;
 @define-color blank-bg              #313244;
-@define-color empty-fg              #313244;
+@define-color empty-fg              #1e1e2e;
 
 /* State Colors */
 @define-color full                  #a6e3a1;

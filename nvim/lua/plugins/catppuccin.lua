@@ -246,9 +246,9 @@ local customCol = function(colors)
                 BlinkCmpLabelMatch               = { link = "Visual" },
                 BlinkCmpMenuBorder               = { fg = colors.crust, bg = colors.crust },
                 BlinkCmpDocBorder                = { fg = colors.crust, bg = colors.crust },
-                -- BlinkCmpMenu                     = { link = "Normal" },
+                BlinkCmpMenu                     = { bg = "#11111b" },
                 -- BlinkCmpMenu                     = { bg = "#13131E" },
-                BlinkCmpMenu                     = { bg = "#0e0e16" },
+                -- BlinkCmpMenu                     = { bg = "#0e0e16" },
                 BlinkCmpMenuSelection            = { link = "Visual" },
                 BlinkCmpSource                   = { link = "NonText" },
 
@@ -500,6 +500,12 @@ local customCol = function(colors)
                 MiniFilesFile                    = { link = "NonText" },
                 MiniFilesCursorLine              = { link = "Visual" },
                 LightBulbSign                    = { fg = spark },
+                TreesitterContext                = { bg = "#181825", bold = true },
+                -- TreesitterContextLineNumber       = { link = "LineNr" },
+                -- TreesitterContext                 = { link = "NormalFloat" },
+                -- TreesitterContextBottom           = { sp = ivory },
+                -- TreesitterContextLineNumberBottom = { sp = ivory },
+                -- TreesitterContextLineNumber      = { link = "Normal" },
 
         }
 end
@@ -524,7 +530,8 @@ return {
                         -- color_overrides        = noita,
                         color_overrides        = {
                                 mocha = {
-                                        crust = "#0e0e16"
+                                        crust  = "#0e0e16",
+                                        mantle = "#12121b"
                                 }
                         },
                         custom_highlights      = customCol,

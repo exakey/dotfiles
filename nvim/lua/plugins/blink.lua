@@ -220,7 +220,7 @@ return {
                                 ripgrep  = {
                                         module       = "blink-cmp-rg",
                                         name         = "RG",
-                                        score_offset = 40,
+                                        score_offset = 10,
                                         max_items    = 10,
                                         opts         = {
                                                 prefix_min_len = 3,
