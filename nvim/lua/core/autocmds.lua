@@ -284,17 +284,17 @@ api.nvim_create_autocmd("LspAttach", {
                 if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
                         local highlight_augroup = api.nvim_create_augroup("lsp-highlight", { clear = false })
 
-                        api.nvim_clear_autocmd({ "CursorHold", "CursorHoldI" }, {
-                                buffer   = event.buf,
-                                group    = highlight_augroup,
-                                callback = vim.lsp.buf.document_highlight
-                        })
+                        -- api.nvim_clear_autocmd({ "CursorHold", "CursorHoldI" }, {
+                        --         buffer   = event.buf,
+                        --         group    = highlight_augroup,
+                        --         callback = vim.lsp.buf.document_highlight
+                        -- })
 
-                        api.nvim_clear_autocmd({ "CursorMoved", "CursorMovedI" }, {
-                                buffer   = event.buf,
-                                group    = highlight_augroup,
-                                callback = vim.lsp.buf.clear_references
-                        })
+                        -- api.nvim_clear_autocmd({ "CursorMoved", "CursorMovedI" }, {
+                        --         buffer   = event.buf,
+                        --         group    = highlight_augroup,
+                        --         callback = vim.lsp.buf.clear_references
+                        -- })
 
                         api.nvim_create_autocmd("LspDetach", {
                                 group    = api.nvim_create_augroup("lsp-detach", { clear = true }),
