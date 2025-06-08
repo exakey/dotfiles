@@ -87,6 +87,15 @@ return {
                         cyclic   = true,
                 })
 
+                local word_boolean = augend.constant.new({
+                        elements = {
+                                "yes",
+                                "no",
+                        },
+                        word     = true,
+                        cyclic   = true,
+                })
+
                 return {
                         dials_by_ft = {
                                 css             = "css",
@@ -109,6 +118,7 @@ return {
                                         weekdays,
                                         months,
                                         capitalized_boolean,
+                                        word_boolean,
                                         augend.constant.alias.bool, -- boolean value (true <-> false)
                                         logical_alias,
                                 },

@@ -196,12 +196,12 @@ end, { desc = "󰆈 Comment Above", silent = true })
 ------------------------------------------------------------------------------------------------------------------------
 -- LSP
 
-map(nx, "K", vim.lsp.buf.hover, { desc = "󰏪 LSP Hover", silent = true })
-map(nx, "J", vim.lsp.buf.signature_help, { desc = "󰏪 LSP Signature", silent = true })
+-- map(n, "K", vim.lsp.buf.hover, { desc = "󰏪 LSP Hover", silent = true })
+-- map(n, "J", vim.lsp.buf.signature_help, { desc = "󰏪 LSP Signature", silent = true })
 -- map(nx, "<leader>f", function() require("functions.nano-plugins").formatWithFallback() end, { desc = "󱉯 Format", silent = true })
-map(nx, ",a", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
+map(n, ",a", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
 map(n, ",o", vim.diagnostic.open_float, { desc = "Diagnostic Float" })
-map(nx, "<leader><leader>c", function() require("tiny-code-action").code_action() end,
+map(n, "<leader><leader>c", function() require("tiny-code-action").code_action() end,
         { desc = "Code Action", silent = true })
 
 -- GOTO

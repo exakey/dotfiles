@@ -109,33 +109,6 @@ vim.diagnostic.config {
 }
 
 ------------------------------------------------------------------------------------------------------------------------
--- DOCUMENT HIGHLIGHTING
-
-local function client_supports_method(client, method, bufnr)
-        if vim.fn.has "nvim-0.11" == 1 then
-                return client:supports_method(method, bufnr)
-        else
-                return client:supports_method(method, { bufnr = bufnr })
-        end
-end
-
--- local client = vim.lsp.get_client_by_id(event.data.client_id)
--- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
---         local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
---
---         vim.api.nvim_clear_autocmd({ "CursorHold", "CursorHoldI" }, {
---                 buffer   = event.buf,
---                 group    = highlight_augroup,
---                 callback = vim.lsp.buf.document_highlight()
---         })
---         vim.api.nvim_clear_autocmd({ "CursorMoved", "CursorMovedI" }, {
---                 buffer   = event.buf,
---                 group    = highlight_augroup,
---                 callback = vim.lsp.buf.clear_references()
---         })
--- end
-
-------------------------------------------------------------------------------------------------------------------------
 -- HANDLERS
 
 -- `vim.lsp.buf.rename`: add notification & writeall to renaming
