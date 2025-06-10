@@ -96,7 +96,7 @@
 }
 
 #cava {
-        color: @main-fg;
+        color: @blank-bg;
         /* background-color: @main-bg; */
         margin-left: 8px;
         margin-right: 0px;
