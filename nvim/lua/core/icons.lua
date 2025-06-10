@@ -6,6 +6,7 @@ M.diagnostics  = {
         WARN  = "󰨓",
         HINT  = "󰨓",
         INFO  = "󰨓",
+        lightbulb  = "󱠀",
 }
 
 -- FOLDING

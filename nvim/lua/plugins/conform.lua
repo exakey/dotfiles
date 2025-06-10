@@ -18,7 +18,6 @@ return {
                         sh         = { "shfmt" },
                         zsh        = { "shfmt" },
                 }
-
                 local options = {
                         clang_format = {
                                 args = { "--style=file" },
@@ -36,7 +35,7 @@ return {
                         conform.format({
                                 lsp_fallback = true,
                                 async        = false,
-                                timeout_ms   = 1000
+                                timeout_ms   = 500
                         })
                 end)
         end

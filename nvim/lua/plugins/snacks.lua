@@ -155,6 +155,14 @@ return {
                         desc = "Show Declarations",
                         mode = { "n" },
                 },
+                {
+                        "<leader><leader>c",
+                        function()
+                                require("tiny-code-action").code_action()
+                        end,
+                        desc = "󱠀 Code Action Picker",
+                        mode = { "n" },
+                }
         },
         opts     = {
                 lazygit   = { enabled = true },

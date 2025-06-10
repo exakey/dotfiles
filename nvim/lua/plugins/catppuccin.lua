@@ -499,7 +499,7 @@ local customCol = function(colors)
                 MiniFilesDirectory               = { link = "Function" },
                 MiniFilesFile                    = { link = "NonText" },
                 MiniFilesCursorLine              = { link = "Visual" },
-                LightBulbSign                    = { fg = spark },
+                -- LightBulbSign                    = { fg = spark },
                 TreesitterContext                = { bg = "#181825", bold = true },
                 -- TreesitterContextLineNumber       = { link = "LineNr" },
                 -- TreesitterContext                 = { link = "NormalFloat" },
@@ -534,7 +534,7 @@ return {
                         color_overrides        = {
                                 mocha = {
                                         crust  = "#0e0e16",
-                                        mantle = "#12121b"
+                                        mantle = "#14141f"
                                 }
                         },
                         custom_highlights      = customCol,

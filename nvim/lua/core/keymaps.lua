@@ -196,19 +196,20 @@ end, { desc = "󰆈 Comment Above", silent = true })
 ------------------------------------------------------------------------------------------------------------------------
 -- LSP
 
--- map(n, "K", vim.lsp.buf.hover, { desc = "󰏪 LSP Hover", silent = true })
--- map(n, "J", vim.lsp.buf.signature_help, { desc = "󰏪 LSP Signature", silent = true })
--- map(nx, "<leader>f", function() require("functions.nano-plugins").formatWithFallback() end, { desc = "󱉯 Format", silent = true })
-map(n, ",a", function() require("functions.quickfix").code_actions() end, { desc = "Quickfix", silent = true })
-map(n, ",o", vim.diagnostic.open_float, { desc = "Diagnostic Float" })
-map(n, "<leader><leader>c", function() require("tiny-code-action").code_action() end,
-        { desc = "Code Action", silent = true })
+-- map(n, "K", vim.lsp.buf.hover, { desc = "󰏪 Hover Documentation" })
+-- map(n, "J", vim.lsp.buf.signature_help, { desc = "󰏪 Signature Help" })
+-- map(n, ",e", vim.diagnostic.open_float, { desc = "󰨓 Diagnostic Float" })
+-- map(n, ",D", vim.lsp.buf.declaration, { desc = " Goto Declaration" })
+-- map(n, ",d", vim.lsp.buf.definition, { desc = " Goto Definition" })
+-- map(n, ",i", vim.lsp.buf.implementation, { desc = " Goto Implementation" })
+-- map(n, ",I", vim.lsp.buf.incoming_calls, { desc = "Incoming calls" })
+-- map(n, ",c", vim.lsp.buf.code_action, { desc = "󱠀 Code Action" })
+-- map(n, ",a", function() require("functions.quickfix").code_actions() end, { desc = "󱠀 Quickfix" })
+-- map(n, "<leader><leader>c", function() require("tiny-code-action").code_action() end, { desc = "󱠀 Code Action Picker" })
+-- map("<leader>f", vim.lsp.buf.format, { desc = "󰏪 Format Buffer"})
 
 -- GOTO
-map(n, ",D", "gD", { desc = "Goto Declaration", silent = true })
--- map(n, ",d", "gd", { desc = "Goto Definition", silent = true })
 map(n, ",f", "gf", { desc = "Goto File", silent = true })
--- map(n, ",i", "gri", { desc = "Goto Implementation", silent = true })
 
 do
         map(nx, "<leader>h", vim.lsp.buf.hover, { desc = "󰋽 LSP hover" })

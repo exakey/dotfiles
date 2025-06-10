@@ -65,8 +65,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- DIAGNOSTICS
 
 ---@diagnostic disable-next-line: unused-local
-local icons        = require("core.icons").diagnostics
-local numbers      = {
+local icons   = require("core.icons").diagnostics
+local numbers = {
         text = {
                 [vim.diagnostic.severity.ERROR] = "",
                 [vim.diagnostic.severity.WARN]  = "",
@@ -172,7 +172,7 @@ end
 -- LSP PROGRESS
 
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
-local progress = vim.defaulttable()
+local progress                          = vim.defaulttable()
 vim.api.nvim_create_autocmd("LspProgress", {
         ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
         callback = function(ev)

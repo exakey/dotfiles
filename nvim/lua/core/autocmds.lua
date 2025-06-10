@@ -1,8 +1,6 @@
 local api = vim.api
 
 ------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------------------------------------------------
 -- AUTO-CD TO PROJECT ROOT
 
 -- local autoCdConfig = {
@@ -271,6 +269,15 @@ api.nvim_create_autocmd("LspAttach", {
 
                 map("K", vim.lsp.buf.hover, "󰏪 Hover Documentation")
                 map("J", vim.lsp.buf.signature_help, "󰏪 Signature Help")
+                map(",e", vim.diagnostic.open_float, "󰨓 Diagnostic Float")
+                map(",D", vim.lsp.buf.declaration, " Goto Declaration")
+                map(",d", vim.lsp.buf.definition, " Goto Definition")
+                map(",i", vim.lsp.buf.implementation, " Goto Implementation")
+                map(",I", vim.lsp.buf.incoming_calls, "Incoming calls")
+                map(",c", vim.lsp.buf.code_action, "󱠀 Code Action")
+                map(",a", function() require("functions.quickfix").code_actions() end, "󱠀 Quickfix")
+                map("<leader><leader>c", function() require("tiny-code-action").code_action() end, "󱠀 Code Action Picker")
+                -- map("<leader>f", vim.lsp.buf.format, "󰏪 Format Buffer")
 
                 local function client_supports_method(client, method, bufnr)
                         if vim.fn.has "nvim-0.11" == 1 then

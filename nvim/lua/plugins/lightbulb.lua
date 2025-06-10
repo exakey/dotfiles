@@ -1,3 +1,5 @@
+icons = require("core.icons")
+
 return {
         "kosayoda/nvim-lightbulb",
         event = "LspAttach",
@@ -7,12 +9,12 @@ return {
                 code_lenses     = false,
                 sign            = {
                         enabled = true,
-                        text    = "󱠀",
+                        text    = icons.diagnostics.lightbulb,
                         hl      = "LightBulbSign",
                 },
                 virtual_text    = {
                         enabled = true,
-                        text    = " 󱠀",
+                        text    = " " .. icons.diagnostics.lightbulb,
                         pos     = "eol",
                         hl_mode = "combine",
                         hl      = "LightBulbSign",
