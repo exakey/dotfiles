@@ -283,7 +283,7 @@ api.nvim_create_autocmd("LspAttach", {
                         if vim.fn.has "nvim-0.11" == 1 then
                                 return client:supports_method(method, bufnr)
                         else
-                                return client:supports_method(method, { bufnr = bufnr })
+                                return client.supports_method(method, { bufnr = bufnr })
                         end
                 end
 
@@ -303,13 +303,27 @@ api.nvim_create_autocmd("LspAttach", {
                         --         callback = vim.lsp.buf.clear_references
                         -- })
 
-                        api.nvim_create_autocmd("LspDetach", {
-                                group    = api.nvim_create_augroup("lsp-detach", { clear = true }),
-                                callback = function(event2)
-                                        vim.lsp.buf.clear_references()
-                                        api.nvim_clear_autocmds({ "lsp-highlight", buffer = event2.buf })
-                                end
-                        })
+                        -- api.nvim_create_autocmd("LspDetach", {
+                        --         group    = api.nvim_create_augroup("lsp-detach", { clear = true }),
+                        --         callback = function(event2)
+                        --                 vim.lsp.buf.clear_references()
+                        --                 api.nvim_clear_autocmds({ "lsp-highlight", buffer = event2.buf })
+                        --         end
+                        -- })
                 end
         end
 })
+
+-- local function client_supports_method(client, method, bufnr)
+--         if vim.fn.has "nvim-0.11" == 1 then
+--                 return client:supports_method(method, bufnr)
+--         else
+--                 return client:supports_method(method, { bufnr = bufnr })
+--         end
+-- end
+--
+-- local client = vim.lsp.get_client_by_id(client_id)
+-- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+        api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, { callback = vim.lsp.buf.document_highlight })
+        api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, { callback = vim.lsp.buf.clear_references })
+-- end

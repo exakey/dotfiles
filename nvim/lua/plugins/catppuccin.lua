@@ -507,8 +507,11 @@ local customCol = function(colors)
                 -- TreesitterContextLineNumberBottom = { sp = ivory },
                 -- TreesitterContextLineNumber      = { link = "Normal" },
                 -- LspReferenceText                 = { bg = "#281d29" },
-                LspReferenceText                 = { link = "Visual" },
-                LspReferenceWrite                = { link = "Visual" },
+                LspReferenceWrite                = { link = "LspReferenceText" },
+                LspReferenceRead                 = { link = "LspReferenceWrite" },
+                -- LspReferenceText                 = { bg = "#21252f", bold = true },
+                LspReferenceText                 = { bg = "#281d29", bold = true },
+                -- LspReferenceText                 = { link = "Visual" },
 
         }
 end
