@@ -7,8 +7,8 @@ local function toggleUnderlines()
         vim.cmd.highlight("@string.special.url.html gui=" .. change)
         vim.cmd.highlight("Underlined gui=" .. change)
 
-        vim.api.nvim_set_hl(0, "LspReferenceWrite", { underdashed = vim.bo.buftype == "" })
-        vim.api.nvim_set_hl(0, "LspReferenceRead", { underdotted = vim.bo.buftype == "" })
+        -- vim.api.nvim_set_hl(0, "LspReferenceWrite", { underdashed = vim.bo.buftype == "" })
+        -- vim.api.nvim_set_hl(0, "LspReferenceRead", { underdotted = vim.bo.buftype == "" })
 end
 
 vim.api.nvim_create_autocmd({ "WinEnter", "FileType" }, {
