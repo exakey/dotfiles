@@ -29,11 +29,6 @@ rev = "0725851"
 hash = "f28138c2e11e87962b66d583fef724c3"
 
 [[plugin.deps]]
-use = "Reledia/glow"
-rev = "5ce76dc"
-hash = "52e5f5c602962e7cbf874da28f52ba45"
-
-[[plugin.deps]]
 use = "Reledia/hexyl"
 rev = "39d3d4e"
 hash = "dd624cbaff94af65f39fd86bc57b340"
