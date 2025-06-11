@@ -23,7 +23,8 @@ text = [
 ]
 
 pdff = [
-        { run = 'zathura "$@"', block = true },
+        { run = 'tdf "$@"', block = true },
+        # { run = 'zathura "$@"', block = true },
 ]
 
 image = [
