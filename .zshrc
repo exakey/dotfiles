@@ -109,7 +109,7 @@ alias    yayfind='$aurhelper -Slq | fzf --border-label="yay" --multi --preview "
 alias    pacfind='pacman -Slq | fzf --multi --border-label="pacman" --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
 
 alias         gpp='g++'
-alias         nvz='nvim ~/.zshrc'
+alias         nvz='nvim ~/.config/.zshrc'
 alias         inv='clear && nvim $(fzf -m --preview="bat --color=always {}") && clear'
 alias         cnv='clear && rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.local/state/nvim && rm -rf ~/.cache/nvim'
 alias         fzf='fzf -m --preview="bat --color=always {}"'
