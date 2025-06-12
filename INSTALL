@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+ln -s "$HOME"/.config/.bash_profile "$HOME"/.bash_profile
+ln -s "$HOME"/.config/.bashrc "$HOME"/.bashrc
+ln -s "$HOME"/.config/.zshrc "$HOME"/.zshrc
+ln -s "$HOME"/.config/.clang-format "$HOME"/.clang-format
+ln -s "$HOME"/.config/.p10k.zsh "$HOME"/.p10k.zsh
+ln -s "$HOME"/.config/.gitconfig "$HOME"/.gitconfig
