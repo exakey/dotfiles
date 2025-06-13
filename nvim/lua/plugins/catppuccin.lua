@@ -49,7 +49,7 @@ local customCol = function(colors)
                 Constant                         = { fg = colors.peach },
                 CurSearch                        = { fg = colors.crust, bg = colors.red },
                 -- CursorColumn                  = { bg = colors.},
-                Cursor                           = { fg = colors.crust, bg = colors.red },
+                -- Cursor                           = { fg = colors.crust, bg = colors.red },
                 CursorLine                       = { bg = colors.none },
                 CursorLineNr                     = { fg = colors.flamingo },
                 Define                           = { fg = colors.pink },
