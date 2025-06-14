@@ -29,6 +29,10 @@
         margin-bottom: 0px;
 }
 
+#custom-recording {
+        color: #f38ba8;
+}
+
 #workspaces button.empty {
         color: @empty-fg;
         background-color: @main-bg;

@@ -80,6 +80,7 @@
                         // "clock",
                         "hyprland/submap",
                         // "custom/separators",
+                        "custom/recording",
                         "hyprland/language",
                         // "custom/separators",
                         "custom/updates",
@@ -295,6 +296,13 @@
                         "format": "🮆",
                         "max-length": 8,
                         "tooltip": false
+                },
+                "custom/recording": {
+                        "exec": "$HOME/.config/waybar/scripts/recording",
+                        "format": "{}",
+                        "max-length": 8,
+                        "tooltip": false,
+                        "interval": 1
                 },
                 "custom/wifi": {
                         "exec": "$HOME/.config/waybar/scripts/wifiinfo",
